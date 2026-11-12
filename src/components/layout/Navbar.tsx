@@ -15,14 +15,14 @@ import logo from "../../assets/logos/logoso.png";
 
 const navigation = [
   {
-    name: "About Us",
-    path: "/about",
-    dropdown: [
-      { name: "Our Story", path: "/about#story" },
-      { name: "Our Mission & Vision", path: "/about#mission" },
-      { name: "Our Core Values", path: "/about#values" },
-    ],
-  },
+  name: "About Us",
+  path: "/about",
+  dropdown: [
+    { name: "Our Story", path: "/our-story" },
+    { name: "Our Team", path: "/our-team" },
+    { name: "Governance", path: "/governance" },
+  ],
+},
   {
     name: "Our Model",
     path: "/our-model",
