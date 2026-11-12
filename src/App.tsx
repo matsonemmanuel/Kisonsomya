@@ -20,6 +20,7 @@ import VolunteerWithUs from "./pages/VolunteerWithUs";
 import PartnerWithUs from "./pages/PartnerWithUs";
 import SupportOurWork from "./pages/SupportOurWork";
 import Contact from "./pages/Contact";
+import Donate from "./pages/Donate";
 
 
 function PagePlaceholder({ title }: { title: string }) {
@@ -67,7 +68,7 @@ function App() {
         <Route path="/partner-with-us" element={<PartnerWithUs />} />
         <Route path="/support-our-work" element={<SupportOurWork />} />
         <Route path="/contact" element={<Contact />} />
-        <Route path="/donate" element={<PagePlaceholder title="Donate" />} />
+        <Route path="/donate" element={<Donate />} />
         <Route path="/news" element={<PagePlaceholder title="News & Stories" />} />
 
         {/* Future Pages */}

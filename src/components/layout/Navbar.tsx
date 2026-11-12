@@ -13,6 +13,16 @@ import {
 
 import logo from "../../assets/logos/logoso.png";
 
+// Official KCIDA WhatsApp donation contact
+const WHATSAPP_NUMBER = "256784871700";
+
+const donationMessage =
+  "Hello KCIDA, I am interested in supporting your community development work. Kindly share the available donation options and payment details.";
+
+const whatsappDonationLink = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(
+  donationMessage
+)}`;
+
 const navigation = [
   {
     name: "About Us",
@@ -28,8 +38,7 @@ const navigation = [
     path: "/our-model",
   },
   {
-   
-  name: "What We Do",
+    name: "What We Do",
     path: "/what-we-do",
     dropdown: [
       { name: "Education & Learning", path: "/education-learning" },
@@ -43,25 +52,24 @@ const navigation = [
     name: "Our Impact",
     path: "/our-impact",
   },
-  
   {
-  name: "Get Involved",
-  path: "/get-involved",
-  dropdown: [
-    {
-      name: "Volunteer With Us",
-      path: "/volunteer-with-us",
-    },
-    {
-      name: "Partner With Us",
-      path: "/partner-with-us",
-    },
-    {
-      name: "Support Our Work",
-      path: "/support-our-work",
-    },
-  ],
-},
+    name: "Get Involved",
+    path: "/get-involved",
+    dropdown: [
+      {
+        name: "Volunteer With Us",
+        path: "/volunteer-with-us",
+      },
+      {
+        name: "Partner With Us",
+        path: "/partner-with-us",
+      },
+      {
+        name: "Support Our Work",
+        path: "/support-our-work",
+      },
+    ],
+  },
   {
     name: "Contact",
     path: "/contact",
@@ -129,7 +137,7 @@ function Navbar() {
           <div className="mb-4 flex items-center justify-end gap-7 text-[13px] text-[#102744]">
 
             <a
-              href="tel:+256772345678"
+              href="tel:+256784871700"
               className="flex items-center gap-2 transition hover:text-[#12652D]"
             >
               <Phone size={18} className="text-[#12652D]" />
@@ -203,14 +211,17 @@ function Navbar() {
               </div>
             ))}
 
-            {/* Donate Button */}
-            <Link
-              to="/donate"
+            {/* Desktop Donate Button - WhatsApp */}
+            <a
+              href={whatsappDonationLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Donate through WhatsApp"
               className="flex shrink-0 items-center gap-2 rounded-lg bg-[#086329] px-5 py-3 text-sm font-bold text-white transition hover:bg-[#064d20]"
             >
               <Heart size={18} fill="currentColor" />
               Donate
-            </Link>
+            </a>
 
           </nav>
         </div>
@@ -311,25 +322,34 @@ function Navbar() {
               </div>
             ))}
 
-            {/* Mobile Donate Button */}
-            <Link
-              to="/donate"
+            {/* Mobile Donate Button - WhatsApp */}
+            <a
+              href={whatsappDonationLink}
+              target="_blank"
+              rel="noopener noreferrer"
               onClick={closeMobileMenu}
-              className="mt-3 flex items-center justify-center gap-2 rounded-lg bg-[#086329] px-5 py-3.5 text-sm font-bold text-white"
+              aria-label="Donate through WhatsApp"
+              className="mt-3 flex items-center justify-center gap-2 rounded-lg bg-[#086329] px-5 py-3.5 text-sm font-bold text-white transition hover:bg-[#064d20]"
             >
               <Heart size={18} fill="currentColor" />
               Donate
-            </Link>
+            </a>
 
             {/* Mobile Contact Details */}
             <div className="mt-5 space-y-3 border-t border-gray-100 pt-4 text-sm text-gray-600">
 
-              <a href="tel:+256772345678" className="flex items-center gap-3">
+              <a
+                href="tel:+256784871700"
+                className="flex items-center gap-3"
+              >
                 <Phone size={17} className="text-green-700" />
-                +256 772 345 678
+                +256 784 871 700
               </a>
 
-              <a href="mailto:info@kisonsomya.org" className="flex items-center gap-3">
+              <a
+                href="mailto:info@kisonsomya.org"
+                className="flex items-center gap-3"
+              >
                 <Mail size={17} className="text-green-700" />
                 info@kisonsomya.org
               </a>
