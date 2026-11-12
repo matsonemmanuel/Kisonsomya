@@ -15,42 +15,53 @@ import logo from "../../assets/logos/logoso.png";
 
 const navigation = [
   {
-  name: "About Us",
-  path: "/about",
-  dropdown: [
-    { name: "Our Story", path: "/our-story" },
-    { name: "Our Team", path: "/our-team" },
-    { name: "Governance", path: "/governance" },
-  ],
-},
+    name: "About Us",
+    path: "/about",
+    dropdown: [
+      { name: "Our Story", path: "/our-story" },
+      { name: "Our Team", path: "/our-team" },
+      { name: "Governance", path: "/governance" },
+    ],
+  },
   {
     name: "Our Model",
     path: "/our-model",
   },
   {
-    name: "What We Do",
+   
+  name: "What We Do",
     path: "/what-we-do",
     dropdown: [
-      { name: "Education & Learning", path: "/what-we-do#education" },
-      { name: "Sustainable Livelihoods", path: "/what-we-do#livelihoods" },
-      { name: "Youth Empowerment", path: "/what-we-do#youth" },
-      { name: "Community Wellbeing", path: "/what-we-do#wellbeing" },
-      { name: "Environment & Resilience", path: "/what-we-do#environment" },
+      { name: "Education & Learning", path: "/education-learning" },
+      { name: "Sustainable Livelihoods", path: "/sustainable-livelihoods" },
+      { name: "Youth Empowerment", path: "/youth-empowerment" },
+      { name: "Community Wellbeing", path: "/community-wellbeing" },
+      { name: "Environment & Resilience", path: "/environment-resilience" },
     ],
   },
   {
     name: "Our Impact",
     path: "/our-impact",
   },
+  
   {
-    name: "Get Involved",
-    path: "/get-involved",
-    dropdown: [
-      { name: "Volunteer With Us", path: "/get-involved#volunteer" },
-      { name: "Partner With Us", path: "/get-involved#partnership" },
-      { name: "Support Our Work", path: "/get-involved#support" },
-    ],
-  },
+  name: "Get Involved",
+  path: "/get-involved",
+  dropdown: [
+    {
+      name: "Volunteer With Us",
+      path: "/volunteer-with-us",
+    },
+    {
+      name: "Partner With Us",
+      path: "/partner-with-us",
+    },
+    {
+      name: "Support Our Work",
+      path: "/support-our-work",
+    },
+  ],
+},
   {
     name: "Contact",
     path: "/contact",
@@ -122,7 +133,7 @@ function Navbar() {
               className="flex items-center gap-2 transition hover:text-[#12652D]"
             >
               <Phone size={18} className="text-[#12652D]" />
-              +256 772 345 678
+              +256 784 871 700
             </a>
 
             <a

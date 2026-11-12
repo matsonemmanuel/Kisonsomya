@@ -8,6 +8,19 @@ import Home from "./pages/Home";
 import OurStory from "./pages/OurStory";
 import OurTeam from "./pages/OurTeam";
 import Governance from "./pages/Governance";
+import OurModel from "./pages/OurModel";
+
+import EducationLearning from "./pages/EducationLearning";
+import SustainableLivelihoods from "./pages/SustainableLivelihoods";
+import YouthEmpowerment from "./pages/YouthEmpowerment";
+import CommunityWellbeing from "./pages/CommunityWellbeing";
+import EnvironmentResilience from "./pages/EnvironmentResilience";
+import OurImpact from "./pages/OurImpact";
+import VolunteerWithUs from "./pages/VolunteerWithUs";
+import PartnerWithUs from "./pages/PartnerWithUs";
+import SupportOurWork from "./pages/SupportOurWork";
+import Contact from "./pages/Contact";
+
 
 function PagePlaceholder({ title }: { title: string }) {
   return (
@@ -34,11 +47,26 @@ function App() {
         <Route path="/governance" element={<Governance />} />
 
         {/* Other Pages */}
-        <Route path="/our-model" element={<PagePlaceholder title="Our Model" />} />
-        <Route path="/what-we-do" element={<PagePlaceholder title="What We Do" />} />
-        <Route path="/our-impact" element={<PagePlaceholder title="Our Impact" />} />
-        <Route path="/get-involved" element={<PagePlaceholder title="Get Involved" />} />
-        <Route path="/contact" element={<PagePlaceholder title="Contact Us" />} />
+        <Route path="/our-model" element={<OurModel />} />
+        <Route
+          path="/education-learning"
+          element={<EducationLearning />}
+        />
+        <Route path="/sustainable-livelihoods" element={<SustainableLivelihoods />} />
+        <Route
+          path="/youth-empowerment"
+          element={<YouthEmpowerment />}
+        />
+        <Route
+          path="/community-wellbeing"
+          element={<CommunityWellbeing />}
+        />
+        <Route path="/environment-resilience" element={<EnvironmentResilience />} />
+        <Route path="/our-impact" element={<OurImpact />} />
+        <Route path="/volunteer-with-us" element={<VolunteerWithUs />} />
+        <Route path="/partner-with-us" element={<PartnerWithUs />} />
+        <Route path="/support-our-work" element={<SupportOurWork />} />
+        <Route path="/contact" element={<Contact />} />
         <Route path="/donate" element={<PagePlaceholder title="Donate" />} />
         <Route path="/news" element={<PagePlaceholder title="News & Stories" />} />
 
