@@ -16,9 +16,9 @@ import {
   CheckCircle2,
   Target,
   TreePine,
-  HandHeart,
+  
   Lightbulb,
-  Waves,
+  
 } from "lucide-react";
 
 const environmentAreas = [

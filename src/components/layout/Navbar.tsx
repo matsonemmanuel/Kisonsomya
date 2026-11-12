@@ -13,16 +13,6 @@ import {
 
 import logo from "../../assets/logos/logoso.png";
 
-// Official KCIDA WhatsApp donation contact
-const WHATSAPP_NUMBER = "256784871700";
-
-const donationMessage =
-  "Hello KCIDA, I am interested in supporting your community development work. Kindly share the available donation options and payment details.";
-
-const whatsappDonationLink = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(
-  donationMessage
-)}`;
-
 const navigation = [
   {
     name: "About Us",
@@ -104,17 +94,14 @@ function Navbar() {
           onClick={closeMobileMenu}
           className="flex shrink-0 items-center gap-4"
         >
-          {/* Organization Logo */}
           <img
             src={logo}
             alt="Kisonsomya Community Development"
             className="h-[82px] w-[82px] object-contain"
           />
 
-          {/* Vertical Divider */}
           <div className="h-[76px] w-px bg-gray-300" />
 
-          {/* Organization Name */}
           <div className="flex flex-col">
             <h1 className="text-[25px] font-extrabold leading-tight tracking-tight text-[#102744]">
               Kisonsomya
@@ -133,7 +120,7 @@ function Navbar() {
         {/* RIGHT SIDE: CONTACT BAR AND NAVIGATION */}
         <div className="hidden min-w-0 flex-1 flex-col items-end xl:flex">
 
-          {/* Top Contact Information */}
+          {/* TOP CONTACT INFORMATION */}
           <div className="mb-4 flex items-center justify-end gap-7 text-[13px] text-[#102744]">
 
             <a
@@ -159,10 +146,9 @@ function Navbar() {
 
           </div>
 
-          {/* Main Navigation */}
+          {/* MAIN NAVIGATION */}
           <nav className="flex w-full items-center justify-end gap-7">
 
-            {/* Home */}
             <NavLink
               to="/"
               end
@@ -171,7 +157,6 @@ function Navbar() {
               Home
             </NavLink>
 
-            {/* Other Navigation Links */}
             {navigation.map((item) => (
               <div key={item.name} className="group relative">
 
@@ -191,7 +176,7 @@ function Navbar() {
                   </span>
                 </NavLink>
 
-                {/* Dropdown Menu */}
+                {/* DROPDOWN MENU */}
                 {item.dropdown && (
                   <div className="invisible absolute left-0 top-full z-50 mt-1 w-64 translate-y-2 rounded-lg border border-gray-100 bg-white py-2 opacity-0 shadow-xl transition-all duration-200 group-hover:visible group-hover:translate-y-0 group-hover:opacity-100 group-focus-within:visible group-focus-within:translate-y-0 group-focus-within:opacity-100">
 
@@ -211,17 +196,14 @@ function Navbar() {
               </div>
             ))}
 
-            {/* Desktop Donate Button - WhatsApp */}
-            <a
-              href={whatsappDonationLink}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Donate through WhatsApp"
+            {/* DESKTOP DONATE BUTTON - OPENS DONATION PAGE */}
+            <Link
+              to="/donate"
               className="flex shrink-0 items-center gap-2 rounded-lg bg-[#086329] px-5 py-3 text-sm font-bold text-white transition hover:bg-[#064d20]"
             >
               <Heart size={18} fill="currentColor" />
               Donate
-            </a>
+            </Link>
 
           </nav>
         </div>
@@ -322,20 +304,17 @@ function Navbar() {
               </div>
             ))}
 
-            {/* Mobile Donate Button - WhatsApp */}
-            <a
-              href={whatsappDonationLink}
-              target="_blank"
-              rel="noopener noreferrer"
+            {/* MOBILE DONATE BUTTON - OPENS DONATION PAGE */}
+            <Link
+              to="/donate"
               onClick={closeMobileMenu}
-              aria-label="Donate through WhatsApp"
               className="mt-3 flex items-center justify-center gap-2 rounded-lg bg-[#086329] px-5 py-3.5 text-sm font-bold text-white transition hover:bg-[#064d20]"
             >
               <Heart size={18} fill="currentColor" />
               Donate
-            </a>
+            </Link>
 
-            {/* Mobile Contact Details */}
+            {/* MOBILE CONTACT DETAILS */}
             <div className="mt-5 space-y-3 border-t border-gray-100 pt-4 text-sm text-gray-600">
 
               <a

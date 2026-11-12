@@ -9,7 +9,7 @@ import {
   Sprout,
   ArrowRight,
   ShieldCheck,
-  Gift,
+  
 } from "lucide-react";
 
 const WHATSAPP_NUMBER = "256784871700";

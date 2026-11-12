@@ -13,8 +13,7 @@ import {
   BriefcaseBusiness,
   CheckCircle2,
   ShieldCheck,
-  Target,
-  MessageCircle,
+  
   Building2,
 } from "lucide-react";
 

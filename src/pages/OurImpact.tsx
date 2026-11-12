@@ -17,10 +17,9 @@ import {
   ClipboardCheck,
   FileText,
   Handshake,
-  Lightbulb,
+  
   Award,
-  CheckCircle2,
-  Building2,
+  
   BarChart3,
 } from "lucide-react";
 
