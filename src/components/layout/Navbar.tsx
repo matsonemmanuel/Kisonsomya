@@ -76,7 +76,7 @@ function Navbar() {
   };
 
   const navLinkClass = ({ isActive }: { isActive: boolean }) =>
-    `relative whitespace-nowrap py-3 text-sm font-semibold transition-colors
+    `relative cursor-pointer whitespace-nowrap py-3 text-sm font-semibold transition-colors
     ${
       isActive
         ? "text-[#12652D] after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-full after:bg-[#12652D]"
@@ -89,7 +89,7 @@ function Navbar() {
       {/* MAIN HEADER */}
       <div className="mx-auto flex max-w-[1600px] items-center justify-between gap-4 px-4 py-3 2xl:gap-6 2xl:px-6">
 
-        {/* LEFT SIDE: LOGO AND ORGANIZATION IDENTITY */}
+        {/* LOGO AND ORGANIZATION IDENTITY */}
         <Link
           to="/"
           onClick={closeMobileMenu}
@@ -120,10 +120,10 @@ function Navbar() {
           </div>
         </Link>
 
-        {/* RIGHT SIDE: CONTACT BAR AND DESKTOP NAVIGATION */}
+        {/* DESKTOP CONTACT AND NAVIGATION */}
         <div className="hidden min-w-0 flex-1 flex-col items-end 2xl:flex">
 
-          {/* TOP CONTACT INFORMATION */}
+          {/* CONTACT INFORMATION */}
           <div className="mb-4 flex items-center justify-end gap-5 text-[12px] text-[#102744] 2xl:gap-7 2xl:text-[13px]">
 
             <a
@@ -149,24 +149,17 @@ function Navbar() {
 
           </div>
 
-          {/* MAIN NAVIGATION */}
+          {/* DESKTOP NAVIGATION */}
           <nav className="flex w-full items-center justify-end gap-4 2xl:gap-5">
 
-            <NavLink
-              to="/"
-              end
-              className={navLinkClass}
-            >
+            <NavLink to="/" end className={navLinkClass}>
               Home
             </NavLink>
 
             {navigation.map((item) => (
               <div key={item.name} className="group relative">
 
-                <NavLink
-                  to={item.path}
-                  className={navLinkClass}
-                >
+                <NavLink to={item.path} className={navLinkClass}>
                   <span className="flex items-center gap-1">
                     {item.name}
 
@@ -179,7 +172,7 @@ function Navbar() {
                   </span>
                 </NavLink>
 
-                {/* DROPDOWN MENU */}
+                {/* DESKTOP DROPDOWN */}
                 {item.dropdown && (
                   <div className="invisible absolute left-0 top-full z-50 mt-1 w-64 translate-y-2 rounded-lg border border-gray-100 bg-white py-2 opacity-0 shadow-xl transition-all duration-200 group-hover:visible group-hover:translate-y-0 group-hover:opacity-100 group-focus-within:visible group-focus-within:translate-y-0 group-focus-within:opacity-100">
 
@@ -187,7 +180,7 @@ function Navbar() {
                       <Link
                         key={subItem.name}
                         to={subItem.path}
-                        className="block px-5 py-3 text-sm text-[#102744] transition hover:bg-green-50 hover:text-[#12652D]"
+                        className="block cursor-pointer px-5 py-3 text-sm text-[#102744] transition hover:bg-green-50 hover:text-[#12652D]"
                       >
                         {subItem.name}
                       </Link>
@@ -199,10 +192,10 @@ function Navbar() {
               </div>
             ))}
 
-            {/* DESKTOP DONATE BUTTON */}
+            {/* DESKTOP DONATE */}
             <Link
               to="/donate"
-              className="flex shrink-0 items-center gap-2 whitespace-nowrap rounded-lg bg-[#086329] px-5 py-3 text-sm font-bold text-white transition hover:bg-[#064d20]"
+              className="flex shrink-0 cursor-pointer items-center gap-2 whitespace-nowrap rounded-lg bg-[#086329] px-5 py-3 text-sm font-bold text-white transition hover:bg-[#064d20]"
             >
               <Heart size={18} fill="currentColor" />
               Donate
@@ -217,7 +210,7 @@ function Navbar() {
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
           aria-expanded={mobileMenuOpen}
-          className="shrink-0 rounded-lg p-2 text-[#102744] transition hover:bg-green-50 2xl:hidden"
+          className="shrink-0 cursor-pointer rounded-lg p-2 text-[#102744] transition hover:bg-green-50 2xl:hidden"
         >
           {mobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
         </button>
@@ -230,12 +223,13 @@ function Navbar() {
 
           <nav className="max-h-[75vh] space-y-1 overflow-y-auto px-5 py-4">
 
+            {/* HOME */}
             <NavLink
               to="/"
               end
               onClick={closeMobileMenu}
               className={({ isActive }) =>
-                `block rounded-lg px-4 py-3 text-sm font-semibold ${
+                `block cursor-pointer rounded-lg px-4 py-3 text-sm font-semibold ${
                   isActive
                     ? "bg-green-50 text-[#12652D]"
                     : "text-[#102744] hover:bg-gray-50"
@@ -245,6 +239,7 @@ function Navbar() {
               Home
             </NavLink>
 
+            {/* MOBILE NAVIGATION ITEMS */}
             {navigation.map((item) => (
               <div key={item.name}>
 
@@ -254,7 +249,7 @@ function Navbar() {
                     to={item.path}
                     onClick={closeMobileMenu}
                     className={({ isActive }) =>
-                      `flex-1 rounded-lg px-4 py-3 text-sm font-semibold ${
+                      `flex-1 cursor-pointer rounded-lg px-4 py-3 text-sm font-semibold ${
                         isActive
                           ? "bg-green-50 text-[#12652D]"
                           : "text-[#102744] hover:bg-gray-50"
@@ -264,6 +259,7 @@ function Navbar() {
                     {item.name}
                   </NavLink>
 
+                  {/* MOBILE DROPDOWN TOGGLE */}
                   {item.dropdown && (
                     <button
                       type="button"
@@ -274,7 +270,7 @@ function Navbar() {
                           expandedMenu === item.name ? null : item.name
                         )
                       }
-                      className="rounded-lg p-3 text-[#102744] hover:bg-green-50"
+                      className="cursor-pointer rounded-lg p-3 text-[#102744] transition hover:bg-green-50"
                     >
                       <ChevronDown
                         size={18}
@@ -287,7 +283,7 @@ function Navbar() {
 
                 </div>
 
-                {/* MOBILE DROPDOWN */}
+                {/* MOBILE DROPDOWN SUBMENU */}
                 {item.dropdown && expandedMenu === item.name && (
                   <div className="ml-5 border-l-2 border-green-100 pl-3">
 
@@ -296,7 +292,7 @@ function Navbar() {
                         key={subItem.name}
                         to={subItem.path}
                         onClick={closeMobileMenu}
-                        className="block rounded-lg px-4 py-2.5 text-sm text-gray-600 hover:bg-green-50 hover:text-[#12652D]"
+                        className="block cursor-pointer rounded-lg px-4 py-2.5 text-sm text-gray-600 transition hover:bg-green-50 hover:text-[#12652D]"
                       >
                         {subItem.name}
                       </Link>
@@ -312,18 +308,18 @@ function Navbar() {
             <Link
               to="/donate"
               onClick={closeMobileMenu}
-              className="mt-3 flex items-center justify-center gap-2 rounded-lg bg-[#086329] px-5 py-3.5 text-sm font-bold text-white transition hover:bg-[#064d20]"
+              className="mt-3 flex cursor-pointer items-center justify-center gap-2 rounded-lg bg-[#086329] px-5 py-3.5 text-sm font-bold text-white transition hover:bg-[#064d20]"
             >
               <Heart size={18} fill="currentColor" />
               Donate
             </Link>
 
-            {/* MOBILE CONTACT DETAILS */}
+            {/* MOBILE CONTACT INFORMATION */}
             <div className="mt-5 space-y-3 border-t border-gray-100 pt-4 text-sm text-gray-600">
 
               <a
                 href="tel:+256784871700"
-                className="flex items-center gap-3"
+                className="flex cursor-pointer items-center gap-3"
               >
                 <Phone size={17} className="text-green-700" />
                 +256 784 871 700
@@ -331,7 +327,7 @@ function Navbar() {
 
               <a
                 href="mailto:info@kisonsomya.org"
-                className="flex items-center gap-3"
+                className="flex cursor-pointer items-center gap-3"
               >
                 <Mail size={17} className="text-green-700" />
                 info@kisonsomya.org
