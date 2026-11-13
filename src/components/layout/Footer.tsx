@@ -25,30 +25,40 @@ function Footer() {
           {/* ORGANIZATION INFORMATION */}
           <div>
 
-            <div className="flex items-center gap-3">
+            {/* CLICKABLE LOGO AND ORGANIZATION IDENTITY */}
+            <Link
+              to="/"
+              className="group inline-flex items-center gap-3"
+              aria-label="KCIDA Home"
+            >
               <img
                 src={logo}
-                alt="Kisonsomya Community Development"
-                className="h-16 w-16 rounded-full bg-white object-contain"
+                alt="Kisonsomya Community Initiative for Development Association Logo"
+                className="h-[76px] w-[76px] shrink-0 rounded-full bg-white p-1 object-contain shadow-md transition duration-300 group-hover:scale-105"
               />
 
-              <div>
-                <h2 className="text-xl font-extrabold">
+              <div className="flex flex-col">
+                <h2 className="text-xl font-extrabold leading-tight text-white">
                   Kisonsomya
                 </h2>
-                <p className="text-sm font-semibold text-[#A8E68A]">
-                  Community Development
+
+                <p className="mt-1 max-w-[230px] text-sm font-semibold leading-snug text-[#A8E68A]">
+                  Community Initiative for Development Association (KCIDA)
                 </p>
               </div>
-            </div>
+            </Link>
 
+            {/* ORGANIZATION DESCRIPTION */}
             <p className="mt-6 text-sm leading-7 text-gray-300">
-              For the Wellbeing of Our Community. We are committed to
-              empowering people, strengthening communities and
-              promoting sustainable development.
+              Kisonsomya Community Initiative for Development Association
+              (KCIDA) is committed to promoting community development through
+              education, modified agriculture, production and economic
+              transformation.
             </p>
 
-            <p className="mt-4 text-sm font-semibold text-[#A8E68A]">
+            <p className="mt-4 text-sm font-semibold leading-6 text-[#A8E68A]">
+              For the Wellbeing of Our Community.
+              <br />
               God First.
             </p>
 
@@ -109,7 +119,7 @@ function Footer() {
             </div>
           </div>
 
-          {/* OUR PROGRAMS */}
+          {/* OUR FOCUS AREAS */}
           <div>
 
             <h3 className="mb-6 text-lg font-bold">
@@ -164,21 +174,30 @@ function Footer() {
                 href="tel:+256784871700"
                 className="flex items-start gap-3 transition hover:text-[#A8E68A]"
               >
-                <Phone size={19} className="mt-1 shrink-0 text-[#A8E68A]" />
-                +256 784 871 700
+                <Phone
+                  size={19}
+                  className="mt-1 shrink-0 text-[#A8E68A]"
+                />
+                <span>+256 784 871 700</span>
               </a>
 
               <a
                 href="mailto:info@kisonsomya.org"
                 className="flex items-start gap-3 transition hover:text-[#A8E68A]"
               >
-                <Mail size={19} className="mt-1 shrink-0 text-[#A8E68A]" />
-                info@kisonsomya.org
+                <Mail
+                  size={19}
+                  className="mt-1 shrink-0 text-[#A8E68A]"
+                />
+                <span>info@kisonsomya.org</span>
               </a>
 
               <div className="flex items-start gap-3">
-                <MapPin size={19} className="mt-1 shrink-0 text-[#A8E68A]" />
-                Kikuube District, Uganda
+                <MapPin
+                  size={19}
+                  className="mt-1 shrink-0 text-[#A8E68A]"
+                />
+                <span>Kisonsomya, Kabwoya, Kikuube District, Uganda</span>
               </div>
 
             </div>
@@ -201,9 +220,9 @@ function Footer() {
 
         <div className="mx-auto flex max-w-[1320px] flex-col items-center justify-between gap-4 px-6 py-6 text-center text-xs text-gray-300 sm:flex-row sm:px-8 sm:text-left">
 
-          <p>
-            © {new Date().getFullYear()} Kisonsomya Community Development.
-            All rights reserved.
+          <p className="leading-6">
+            © {new Date().getFullYear()} Kisonsomya Community Initiative
+            for Development Association (KCIDA). All rights reserved.
           </p>
 
           <div className="flex flex-wrap justify-center gap-5">
@@ -224,8 +243,14 @@ function Footer() {
 
           </div>
 
-          <p>
-            Designed with <Heart size={12} className="mx-1 inline text-red-400" fill="currentColor" /> for community.
+          <p className="whitespace-nowrap">
+            Designed with{" "}
+            <Heart
+              size={12}
+              className="mx-1 inline text-red-400"
+              fill="currentColor"
+            />{" "}
+            for community.
           </p>
 
         </div>

@@ -285,35 +285,40 @@ function Home() {
         </div>
       </section>
 
+      
       {/* IMPACT NUMBERS */}
       <section className="mx-auto mt-7 max-w-[1320px] px-5 sm:px-8">
 
-        <div className="grid grid-cols-2 gap-y-8 rounded-2xl bg-gradient-to-r from-[#075525] to-[#08712F] px-6 py-8 text-white sm:grid-cols-3 lg:grid-cols-6 lg:items-center lg:gap-3 lg:px-10">
+        <div className="grid grid-cols-2 gap-y-8 rounded-2xl bg-gradient-to-r from-[#075525] to-[#08712F] px-5 py-9 text-white sm:grid-cols-3 xl:grid-cols-6 xl:items-center xl:gap-4 xl:px-8">
 
-          <div className="flex items-center justify-center border-b border-white/30 pb-5 text-center sm:col-span-3 lg:col-span-1 lg:border-b-0 lg:border-r lg:pb-0 lg:pr-5">
-            <h2 className="text-2xl font-extrabold leading-tight">
+          {/* SECTION TITLE */}
+          <div className="flex items-center justify-center border-b border-white/30 pb-5 text-center sm:col-span-3 xl:col-span-1 xl:border-b-0 xl:border-r xl:pb-0 xl:pr-5">
+            <h2 className="text-xl font-extrabold leading-tight sm:text-2xl">
               Our Organisation
               <br />
               at a Glance
             </h2>
           </div>
 
+          {/* ORGANISATION STATISTICS */}
           {impactStats.map((stat) => {
             const Icon = stat.icon;
 
             return (
               <div
                 key={stat.label}
-                className="flex flex-col items-center text-center"
+                className="flex min-w-0 flex-col items-center justify-center gap-2 px-2 text-center"
               >
-                <div className="flex items-center gap-2">
-                  <Icon size={30} fill="currentColor" />
-                  <span className="text-3xl font-extrabold">
-                    {stat.number}
-                  </span>
-                </div>
+                <Icon
+                  size={27}
+                  className="shrink-0"
+                />
 
-                <p className="mt-2 text-sm text-white/95">
+                <span className="max-w-full break-words text-xl font-extrabold leading-tight sm:text-2xl">
+                  {stat.number}
+                </span>
+
+                <p className="text-xs leading-5 text-white/90 sm:text-sm">
                   {stat.label}
                 </p>
               </div>
@@ -322,6 +327,7 @@ function Home() {
 
         </div>
       </section>
+
 
       {/* ABOUT US */}
       <section className="mx-auto grid max-w-[1320px] items-center gap-10 px-5 py-20 sm:px-8 lg:grid-cols-2">
