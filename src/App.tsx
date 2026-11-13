@@ -21,6 +21,7 @@ import PartnerWithUs from "./pages/PartnerWithUs";
 import SupportOurWork from "./pages/SupportOurWork";
 import Contact from "./pages/Contact";
 import Donate from "./pages/Donate";
+import ScrollToTop from "./components/ScrollToTop";
 
 
 function PagePlaceholder({ title }: { title: string }) {
@@ -36,6 +37,8 @@ function PagePlaceholder({ title }: { title: string }) {
 function App() {
   return (
     <>
+
+      <ScrollToTop />
       <Navbar />
 
       <Routes>
