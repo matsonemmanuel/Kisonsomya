@@ -14,7 +14,6 @@ import {
   CheckCircle2,
   Target,
   Globe2,
-  MessageCircle,
 } from "lucide-react";
 
 const partnershipAreas = [

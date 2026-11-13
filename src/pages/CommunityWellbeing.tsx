@@ -12,12 +12,11 @@ import {
   House,
   Handshake,
   Scale,
-  Leaf,
   CheckCircle2,
   Target,
   Smile,
   Sprout,
-  MessageCircle,
+  
 } from "lucide-react";
 
 const wellbeingAreas = [
@@ -75,13 +74,6 @@ const wellbeingPrinciples = [
 ];
 
 const wellbeingApproach = [
-  {
-    number: "01",
-    title: "Listen to the Community",
-    description:
-      "Recognise community experiences, priorities and concerns as important considerations in development.",
-    icon: MessageCircle,
-  },
   {
     number: "02",
     title: "Promote Awareness",
