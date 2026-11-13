@@ -5,7 +5,7 @@ import tailwindcss from '@tailwindcss/vite'
 import { defineConfig } from 'vite'
 
 export default defineConfig({
-  base: '/kisonsomya/',
+  base: '/Kisonsomya/',
   plugins: [
     react(),
     babel({ presets: [reactCompilerPreset()] }),
