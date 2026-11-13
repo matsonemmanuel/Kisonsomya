@@ -20,10 +20,11 @@ import {
   CalendarDays,
 } from "lucide-react";
 
-
+const publicAsset = (path: string) =>
+  `${import.meta.env.BASE_URL}${path.replace(/^\/+/, "")}`;
 const slides = [
   {
-    image: "/Images/slider1.jpg",
+    image: publicAsset("Images/slider1.jpg"),
     tag: "Education • Agriculture • Community Development",
     title: "Working Together for a",
     highlight: "Sustained Community",
@@ -31,7 +32,7 @@ const slides = [
       "KCIDA works towards a well-sustained community through education, modified agriculture and production in Kisonsomya, Kabwoya Sub-county and Kikuube District.",
   },
   {
-    image: "/Images/slider2.jpg",
+    image: publicAsset("Images/slider2.jpg"),
     tag: "Agriculture • Production • Economic Transformation",
     title: "Promoting Education and",
     highlight: "Sustainable Development",
@@ -39,7 +40,7 @@ const slides = [
       "The association seeks to create opportunities through education centres, economic transformation and sustainable agricultural production.",
   },
   {
-    image: "/Images/slider4.jpg",
+    image: publicAsset("Images/slider4.jpg"),
     tag: "Health • Environment • Community Wellbeing",
     title: "Building a Healthier and",
     highlight: "Sustainable Community",
@@ -88,7 +89,7 @@ const impactStats = [
 
 const programs = [
   {
-    image: "/Images/education.jpg",
+    image: publicAsset("Images/education.jpg"),
     category: "Education",
     title: "Education & Learning",
     description:
@@ -96,7 +97,7 @@ const programs = [
     link: "/what-we-do#education",
   },
   {
-    image: "/Images/liveli.jpg",
+    image: publicAsset("Images/liveli.jpg"),
     category: "Livelihoods",
     title: "Sustainable Development",
     description:
@@ -104,7 +105,7 @@ const programs = [
     link: "/what-we-do#livelihoods",
   },
   {
-    image: "/Images/comunity.jpg",
+    image: publicAsset("Images/comunity.jpg"),
     category: "Community",
     title: "Community Development",
     description:
@@ -117,7 +118,7 @@ const programs = [
 
 const news = [
   {
-    image: "/Images/slider4.jpg",
+    image: publicAsset("Images/slider4.jpg"),
     category: "Education",
     date: "Association Background",
     title: "Education and opportunity in the community",
@@ -125,7 +126,7 @@ const news = [
       "Education is one of the pathways identified in the association’s constitution for creating opportunities within the community.",
   },
   {
-    image: "/Images/agric.jpg",
+    image: publicAsset("Images/agric.jpg"),
     category: "Livelihoods",
     date: "Constitution & Objectives",
     title: "Agriculture, production and economic transformation",
@@ -133,7 +134,7 @@ const news = [
       "The association identifies modified agriculture and production as important elements of its vision for a well-sustained community.",
   },
   {
-    image: "/Images/comunity1.jpg",
+    image: publicAsset("Images/comunity1.jpg"),
     category: "Community",
     date: "Governance & Accountability",
     title: "Community participation and collective development",
@@ -334,7 +335,7 @@ function Home() {
 
         <div className="relative">
           <img
-            src="/Images/about.jpg"
+            src={publicAsset("Images/about.jpg")}
             alt="Community members participating in development activities"
             className="h-[390px] w-full rounded-2xl object-cover shadow-lg"
           />
@@ -561,7 +562,7 @@ function Home() {
           <div className="grid items-center gap-10 lg:grid-cols-2">
 
             <img
-              src="/Images/impact.jpg"
+              src={publicAsset("Images/impact.jpg")}
               alt="Community members working together"
               className="h-[350px] w-full rounded-2xl object-cover shadow-lg"
             />
