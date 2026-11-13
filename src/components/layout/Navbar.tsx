@@ -11,7 +11,7 @@ import {
   ChevronDown,
 } from "lucide-react";
 
-import logo from "../../assets/logos/logoso.png";
+import logo from "../../assets/logos/log.png";
 
 const navigation = [
   {
@@ -86,46 +86,49 @@ function Navbar() {
   return (
     <header className="sticky top-0 z-50 w-full bg-white shadow-sm">
 
-      <div className="mx-auto flex max-w-[1440px] items-center justify-between gap-6 px-6 py-3">
+      {/* MAIN HEADER */}
+      <div className="mx-auto flex max-w-[1600px] items-center justify-between gap-4 px-4 py-3 2xl:gap-6 2xl:px-6">
 
         {/* LEFT SIDE: LOGO AND ORGANIZATION IDENTITY */}
         <Link
           to="/"
           onClick={closeMobileMenu}
-          className="flex shrink-0 items-center gap-4"
+          className="flex min-w-0 shrink items-center gap-3 2xl:gap-4"
         >
           <img
             src={logo}
-            alt="Kisonsomya Community Development"
-            className="h-[82px] w-[82px] object-contain"
+            alt="KCIDA Logo"
+            className="h-[76px] w-[76px] shrink-0 object-contain 2xl:h-[82px] 2xl:w-[82px]"
           />
 
-          <div className="h-[76px] w-px bg-gray-300" />
+          <div className="h-[72px] w-px shrink-0 bg-gray-300" />
 
-          <div className="flex flex-col">
-            <h1 className="text-[25px] font-extrabold leading-tight tracking-tight text-[#102744]">
+          <div className="flex min-w-0 flex-col justify-center">
+            <h1 className="text-[25px] font-extrabold leading-none tracking-tight text-[#102744]">
               Kisonsomya
             </h1>
 
-            <p className="text-[19px] font-bold leading-tight text-[#12652D]">
-              Community Development
+            <p className="mt-1 max-w-[440px] text-[15px] font-bold leading-snug text-[#12652D] 2xl:text-[17px]">
+              Community Initiative for Development Association (KCIDA)
             </p>
 
-            <p className="mt-1 whitespace-nowrap text-[12px] text-[#102744]">
-              For the Wellbeing of Our Community&nbsp; | &nbsp;God First
-            </p>
+            <div className="mt-1.5 flex flex-wrap items-center gap-2 text-[11px] font-medium text-[#526174] 2xl:text-xs">
+              <span>For the Wellbeing of Our Community</span>
+              <span className="text-[#16813A]">|</span>
+              <span className="font-bold text-[#12652D]">God First</span>
+            </div>
           </div>
         </Link>
 
-        {/* RIGHT SIDE: CONTACT BAR AND NAVIGATION */}
-        <div className="hidden min-w-0 flex-1 flex-col items-end xl:flex">
+        {/* RIGHT SIDE: CONTACT BAR AND DESKTOP NAVIGATION */}
+        <div className="hidden min-w-0 flex-1 flex-col items-end 2xl:flex">
 
           {/* TOP CONTACT INFORMATION */}
-          <div className="mb-4 flex items-center justify-end gap-7 text-[13px] text-[#102744]">
+          <div className="mb-4 flex items-center justify-end gap-5 text-[12px] text-[#102744] 2xl:gap-7 2xl:text-[13px]">
 
             <a
               href="tel:+256784871700"
-              className="flex items-center gap-2 transition hover:text-[#12652D]"
+              className="flex shrink-0 items-center gap-2 transition hover:text-[#12652D]"
             >
               <Phone size={18} className="text-[#12652D]" />
               +256 784 871 700
@@ -133,13 +136,13 @@ function Navbar() {
 
             <a
               href="mailto:info@kisonsomya.org"
-              className="flex items-center gap-2 transition hover:text-[#12652D]"
+              className="flex shrink-0 items-center gap-2 transition hover:text-[#12652D]"
             >
               <Mail size={20} className="text-[#12652D]" />
               info@kisonsomya.org
             </a>
 
-            <div className="flex items-center gap-2 whitespace-nowrap">
+            <div className="flex shrink-0 items-center gap-2 whitespace-nowrap">
               <MapPin size={20} className="text-[#12652D]" />
               Kikuube, Uganda
             </div>
@@ -147,7 +150,7 @@ function Navbar() {
           </div>
 
           {/* MAIN NAVIGATION */}
-          <nav className="flex w-full items-center justify-end gap-7">
+          <nav className="flex w-full items-center justify-end gap-4 2xl:gap-5">
 
             <NavLink
               to="/"
@@ -196,10 +199,10 @@ function Navbar() {
               </div>
             ))}
 
-            {/* DESKTOP DONATE BUTTON - OPENS DONATION PAGE */}
+            {/* DESKTOP DONATE BUTTON */}
             <Link
               to="/donate"
-              className="flex shrink-0 items-center gap-2 rounded-lg bg-[#086329] px-5 py-3 text-sm font-bold text-white transition hover:bg-[#064d20]"
+              className="flex shrink-0 items-center gap-2 whitespace-nowrap rounded-lg bg-[#086329] px-5 py-3 text-sm font-bold text-white transition hover:bg-[#064d20]"
             >
               <Heart size={18} fill="currentColor" />
               Donate
@@ -208,22 +211,22 @@ function Navbar() {
           </nav>
         </div>
 
-        {/* MOBILE MENU BUTTON */}
+        {/* MOBILE / TABLET MENU BUTTON */}
         <button
           type="button"
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
           aria-expanded={mobileMenuOpen}
-          className="rounded-lg p-2 text-[#102744] transition hover:bg-green-50 xl:hidden"
+          className="shrink-0 rounded-lg p-2 text-[#102744] transition hover:bg-green-50 2xl:hidden"
         >
           {mobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
         </button>
 
       </div>
 
-      {/* MOBILE NAVIGATION */}
+      {/* MOBILE / TABLET NAVIGATION */}
       {mobileMenuOpen && (
-        <div className="border-t border-gray-100 bg-white shadow-lg xl:hidden">
+        <div className="border-t border-gray-100 bg-white shadow-lg 2xl:hidden">
 
           <nav className="max-h-[75vh] space-y-1 overflow-y-auto px-5 py-4">
 
@@ -284,6 +287,7 @@ function Navbar() {
 
                 </div>
 
+                {/* MOBILE DROPDOWN */}
                 {item.dropdown && expandedMenu === item.name && (
                   <div className="ml-5 border-l-2 border-green-100 pl-3">
 
@@ -304,7 +308,7 @@ function Navbar() {
               </div>
             ))}
 
-            {/* MOBILE DONATE BUTTON - OPENS DONATION PAGE */}
+            {/* MOBILE DONATE BUTTON */}
             <Link
               to="/donate"
               onClick={closeMobileMenu}

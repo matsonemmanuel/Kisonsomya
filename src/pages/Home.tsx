@@ -20,11 +20,10 @@ import {
   CalendarDays,
 } from "lucide-react";
 
-import heroImage from "../assets/hero.png";
 
 const slides = [
   {
-    image: heroImage,
+    image: "/Images/slider1.jpg",
     tag: "Education • Agriculture • Community Development",
     title: "Working Together for a",
     highlight: "Sustained Community",
@@ -32,8 +31,7 @@ const slides = [
       "KCIDA works towards a well-sustained community through education, modified agriculture and production in Kisonsomya, Kabwoya Sub-county and Kikuube District.",
   },
   {
-    image:
-      "https://images.unsplash.com/photo-1464226184884-fa280b87c399?w=1800",
+    image: "/Images/slider2.jpg",
     tag: "Agriculture • Production • Economic Transformation",
     title: "Promoting Education and",
     highlight: "Sustainable Development",
@@ -41,8 +39,7 @@ const slides = [
       "The association seeks to create opportunities through education centres, economic transformation and sustainable agricultural production.",
   },
   {
-    image:
-      "https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=1800",
+    image: "/Images/slider4.jpg",
     tag: "Health • Environment • Community Wellbeing",
     title: "Building a Healthier and",
     highlight: "Sustainable Community",
@@ -50,6 +47,7 @@ const slides = [
       "KCIDA promotes community wellbeing through health, environmental conservation, peace, prosperity, freedom and happiness.",
   },
 ];
+
 
 const focusAreas = [
   {
@@ -87,10 +85,10 @@ const impactStats = [
   { icon: Heart, number: "Uganda", label: "Country" },
 ];
 
+
 const programs = [
   {
-    image:
-      "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=900",
+    image: "/Images/education.jpg",
     category: "Education",
     title: "Education & Learning",
     description:
@@ -98,8 +96,7 @@ const programs = [
     link: "/what-we-do#education",
   },
   {
-    image:
-      "https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=900",
+    image: "/Images/liveli.jpg",
     category: "Livelihoods",
     title: "Sustainable Development",
     description:
@@ -107,8 +104,7 @@ const programs = [
     link: "/what-we-do#livelihoods",
   },
   {
-    image:
-      "https://images.unsplash.com/photo-1529390079861-591de354faf5?w=900",
+    image: "/Images/comunity.jpg",
     category: "Community",
     title: "Community Development",
     description:
@@ -117,10 +113,11 @@ const programs = [
   },
 ];
 
+
+
 const news = [
   {
-    image:
-      "https://images.unsplash.com/photo-1509062522246-3755977927d7?w=900",
+    image: "/Images/slider4.jpg",
     category: "Education",
     date: "Association Background",
     title: "Education and opportunity in the community",
@@ -128,8 +125,7 @@ const news = [
       "Education is one of the pathways identified in the association’s constitution for creating opportunities within the community.",
   },
   {
-    image:
-      "https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=900",
+    image: "/Images/agric.jpg",
     category: "Livelihoods",
     date: "Constitution & Objectives",
     title: "Agriculture, production and economic transformation",
@@ -137,8 +133,7 @@ const news = [
       "The association identifies modified agriculture and production as important elements of its vision for a well-sustained community.",
   },
   {
-    image:
-      "https://images.unsplash.com/photo-1531206715517-5c0ba140b2b8?w=900",
+    image: "/Images/comunity1.jpg",
     category: "Community",
     date: "Governance & Accountability",
     title: "Community participation and collective development",
@@ -146,6 +141,7 @@ const news = [
       "The association’s constitution provides for member participation and collective decision-making in its governance.",
   },
 ];
+
 
 function Home() {
   const [activeSlide, setActiveSlide] = useState(0);
@@ -332,7 +328,7 @@ function Home() {
 
         <div className="relative">
           <img
-            src="https://images.unsplash.com/photo-1542810634-71277d95dcbb?w=1000"
+            src="/Images/about.jpg"
             alt="Community members participating in development activities"
             className="h-[390px] w-full rounded-2xl object-cover shadow-lg"
           />
@@ -559,7 +555,7 @@ function Home() {
           <div className="grid items-center gap-10 lg:grid-cols-2">
 
             <img
-              src="https://images.unsplash.com/photo-1531206715517-5c0ba140b2b8?w=1100"
+              src="/Images/impact.jpg"
               alt="Community members working together"
               className="h-[350px] w-full rounded-2xl object-cover shadow-lg"
             />

@@ -161,11 +161,11 @@ function Footer() {
             <div className="space-y-5 text-sm text-gray-300">
 
               <a
-                href="tel:+256772345678"
+                href="tel:+256784871700"
                 className="flex items-start gap-3 transition hover:text-[#A8E68A]"
               >
                 <Phone size={19} className="mt-1 shrink-0 text-[#A8E68A]" />
-                +256 772 345 678
+                +256 784 871 700
               </a>
 
               <a
