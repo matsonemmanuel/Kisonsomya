@@ -1,4 +1,5 @@
 
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import {
   ArrowRight,
@@ -11,33 +12,33 @@ import {
   Award,
   BookOpen,
   UserRound,
-  
 } from "lucide-react";
 
-/*
-  Add confirmed team member information here.
+const publicAsset = (path: string) =>
+  `${import.meta.env.BASE_URL}${path.replace(/^\/+/, "")}`;
 
-  Replace the placeholder names, roles and image paths
-  with actual KCIDA personnel details when available.
+/*
+  Replace placeholder names, roles and descriptions with
+  confirmed KCIDA personnel information when available.
 */
 
 const leadershipTeam = [
   {
     name: "Name to be added",
     role: "Executive Director",
-    image: "/images/team-placeholder.jpg",
+    image: publicAsset("Images/founder.jpg"),
     description: "Leadership profile to be added.",
   },
   {
     name: "Name to be added",
     role: "Chairperson",
-    image: "/images/team-placeholder.jpg",
+    image: publicAsset("Images/member1.jpg"),
     description: "Leadership profile to be added.",
   },
   {
     name: "Name to be added",
     role: "Treasurer",
-    image: "/images/team-placeholder.jpg",
+    image: publicAsset("Images/member2.jpg"),
     description: "Leadership profile to be added.",
   },
 ];
@@ -52,19 +53,19 @@ const trainers = [
     name: "Trainer profile to be added",
     role: "Trainer / Facilitator",
     expertise: "Training area to be confirmed",
-    image: "/images/trainer-placeholder.jpg",
+    image: publicAsset("Images/trainer-placeholder.jpg"),
   },
   {
     name: "Trainer profile to be added",
     role: "Trainer / Facilitator",
     expertise: "Training area to be confirmed",
-    image: "/images/trainer-placeholder.jpg",
+    image: publicAsset("Images/trainer-placeholder.jpg"),
   },
   {
     name: "Trainer profile to be added",
     role: "Trainer / Facilitator",
     expertise: "Training area to be confirmed",
-    image: "/images/trainer-placeholder.jpg",
+    image: publicAsset("Images/trainer-placeholder.jpg"),
   },
 ];
 
@@ -100,21 +101,23 @@ function ProfileCard({
   image: string;
   description: string;
 }) {
+  const [imageError, setImageError] = useState(false);
+
   return (
     <article className="group overflow-hidden rounded-3xl border border-slate-100 bg-white shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-xl">
-      <div className="relative h-[300px] overflow-hidden bg-[#eaf4e8]">
-        <img
-          src={image}
-          alt={name}
-          className="h-full w-full object-cover transition duration-500 group-hover:scale-105"
-          onError={(event) => {
-            event.currentTarget.style.display = "none";
-          }}
-        />
-
-        <div className="absolute inset-0 flex items-center justify-center text-[#08752e]">
-          <UserRound size={65} strokeWidth={1.2} />
-        </div>
+      <div className="relative h-[420px] overflow-hidden bg-[#eaf4e8]">
+        {!imageError ? (
+          <img
+            src={image}
+            alt={name}
+            className="h-full w-full object-cover object-[center_15%] transition duration-500 group-hover:scale-105"
+            onError={() => setImageError(true)}
+          />
+        ) : (
+          <div className="absolute inset-0 flex items-center justify-center text-[#08752e]">
+            <UserRound size={65} strokeWidth={1.2} />
+          </div>
+        )}
 
         <div className="absolute bottom-4 left-4 rounded-full bg-white/95 px-4 py-2 text-xs font-bold text-[#08752e] shadow-sm">
           KCIDA Team
@@ -138,6 +141,54 @@ function ProfileCard({
   );
 }
 
+function TrainerCard({
+  trainer,
+}: {
+  trainer: (typeof trainers)[number];
+}) {
+  const [imageError, setImageError] = useState(false);
+
+  return (
+    <article className="group overflow-hidden rounded-3xl border border-slate-100 bg-white shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-xl">
+      <div className="relative flex h-[270px] items-center justify-center overflow-hidden bg-[#eaf4e8]">
+        {!imageError ? (
+          <img
+            src={trainer.image}
+            alt={trainer.name}
+            className="absolute inset-0 h-full w-full object-cover object-[center_15%]"
+            onError={() => setImageError(true)}
+          />
+        ) : (
+          <GraduationCap
+            size={65}
+            strokeWidth={1.2}
+            className="text-[#08752e]"
+          />
+        )}
+
+        <span className="absolute bottom-4 left-4 rounded-full bg-white px-4 py-2 text-xs font-bold text-[#08752e] shadow-sm">
+          Trainer
+        </span>
+      </div>
+
+      <div className="p-6">
+        <p className="text-xs font-bold uppercase tracking-wider text-[#16813a]">
+          {trainer.role}
+        </p>
+
+        <h4 className="mt-2 text-xl font-extrabold text-[#102448]">
+          {trainer.name}
+        </h4>
+
+        <div className="mt-4 flex items-center gap-2 text-sm text-slate-500">
+          <BookOpen size={16} className="text-[#08752e]" />
+          {trainer.expertise}
+        </div>
+      </div>
+    </article>
+  );
+}
+
 export default function OurTeam() {
   return (
     <main className="overflow-hidden bg-white text-slate-900">
@@ -146,7 +197,7 @@ export default function OurTeam() {
       <section
         className="relative flex min-h-[340px] items-center bg-cover bg-center md:min-h-[410px]"
         style={{
-          backgroundImage: "url('/images/kcida-team-hero.jpg')",
+          backgroundImage: `url("${publicAsset("Images/comunity.jpg")}")`,
         }}
       >
         <div className="absolute inset-0 bg-gradient-to-r from-[#062d18]/90 via-[#073b20]/70 to-transparent" />
@@ -172,7 +223,10 @@ export default function OurTeam() {
             </p>
 
             <div className="mt-7 flex items-center gap-3 text-sm font-medium">
-              <Link to="/" className="flex items-center gap-2 hover:text-[#a6e77d]">
+              <Link
+                to="/"
+                className="flex items-center gap-2 hover:text-[#a6e77d]"
+              >
                 <Home size={16} />
                 Home
               </Link>
@@ -202,7 +256,9 @@ export default function OurTeam() {
 
           <h2 className="mt-5 text-3xl font-extrabold leading-tight text-[#102448] md:text-4xl">
             Together, We Make
-            <span className="block">Community Development Possible</span>
+            <span className="block">
+              Community Development Possible
+            </span>
           </h2>
 
           <p className="mt-5 text-[15px] leading-8 text-slate-600">
@@ -294,6 +350,7 @@ export default function OurTeam() {
                 <h3 className="font-bold text-[#102448]">
                   Knowledge Sharing
                 </h3>
+
                 <p className="mt-1 text-sm text-slate-600">
                   Supporting learning and skills development.
                 </p>
@@ -305,9 +362,9 @@ export default function OurTeam() {
             <div className="absolute -bottom-3 -right-3 h-32 w-32 rounded-3xl bg-[#16813a]" />
 
             <img
-              src="/images/kcida-training.jpg"
+              src={publicAsset("Images/founder1.jpg")}
               alt="Community training and learning activity"
-              className="relative h-[320px] w-full rounded-3xl object-cover md:h-[390px]"
+              className="relative h-[320px] w-full rounded-3xl object-cover object-[center_15%] md:h-[390px]"
             />
           </div>
 
@@ -329,46 +386,10 @@ export default function OurTeam() {
 
           <div className="grid gap-7 md:grid-cols-2 lg:grid-cols-3">
             {trainers.map((trainer, index) => (
-              <article
+              <TrainerCard
                 key={`${trainer.name}-${index}`}
-                className="group overflow-hidden rounded-3xl border border-slate-100 bg-white shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-xl"
-              >
-                <div className="relative flex h-[270px] items-center justify-center overflow-hidden bg-[#eaf4e8]">
-                  <img
-                    src={trainer.image}
-                    alt={trainer.name}
-                    className="absolute inset-0 h-full w-full object-cover"
-                    onError={(event) => {
-                      event.currentTarget.style.display = "none";
-                    }}
-                  />
-
-                  <GraduationCap
-                    size={65}
-                    strokeWidth={1.2}
-                    className="text-[#08752e]"
-                  />
-
-                  <span className="absolute bottom-4 left-4 rounded-full bg-white px-4 py-2 text-xs font-bold text-[#08752e] shadow-sm">
-                    Trainer
-                  </span>
-                </div>
-
-                <div className="p-6">
-                  <p className="text-xs font-bold uppercase tracking-wider text-[#16813a]">
-                    {trainer.role}
-                  </p>
-
-                  <h4 className="mt-2 text-xl font-extrabold text-[#102448]">
-                    {trainer.name}
-                  </h4>
-
-                  <div className="mt-4 flex items-center gap-2 text-sm text-slate-500">
-                    <BookOpen size={16} className="text-[#08752e]" />
-                    {trainer.expertise}
-                  </div>
-                </div>
-              </article>
+                trainer={trainer}
+              />
             ))}
           </div>
 
@@ -427,7 +448,7 @@ export default function OurTeam() {
       <section
         className="relative bg-cover bg-center px-6 py-16 text-center md:px-10 md:py-20"
         style={{
-          backgroundImage: "url('/images/kcida-training.jpg')",
+          backgroundImage: `url("${publicAsset("Images/comunity.jpg")}")`,
         }}
       >
         <div className="absolute inset-0 bg-[#062d18]/85" />
