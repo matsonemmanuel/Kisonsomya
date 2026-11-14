@@ -16,12 +16,14 @@ import {
   Scale,
 } from "lucide-react";
 
+
 const images = {
-  hero: "/images/kcida-story-hero.jpg",
-  community: "/images/kcida-community.jpg",
-  team: "/images/kcida-team.jpg",
-  gathering: "/images/kcida-community-gathering.jpg",
+  hero: `${import.meta.env.BASE_URL}Images/liveli.jpg`,
+  community: `${import.meta.env.BASE_URL}Images/members.jpg`,
+  team: `${import.meta.env.BASE_URL}Images/comunity.jpg`,
+  gathering: `${import.meta.env.BASE_URL}Images/slider1.jpg`,
 };
+
 
 const focusAreas = [
   {
