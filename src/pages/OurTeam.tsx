@@ -451,7 +451,7 @@ export default function OurTeam() {
           backgroundImage: `url("${publicAsset("Images/comunity.jpg")}")`,
         }}
       >
-        <div className="absolute inset-0 bg-[#062d18]/85" />
+        <div className="absolute inset-0 bg-[#062d18]/20" />
 
         <div className="relative mx-auto max-w-3xl text-white">
 
