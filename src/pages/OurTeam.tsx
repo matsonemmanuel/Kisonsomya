@@ -200,7 +200,7 @@ export default function OurTeam() {
           backgroundImage: `url("${publicAsset("Images/comunity.jpg")}")`,
         }}
       >
-        <div className="absolute inset-0 bg-gradient-to-r from-[#062d18]/90 via-[#073b20]/70 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#062d18]/30 via-[#073b20]/70 to-transparent" />
 
         <div className="relative mx-auto w-full max-w-7xl px-6 py-16 md:px-10">
           <div className="max-w-2xl text-white">
