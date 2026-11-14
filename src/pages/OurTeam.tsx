@@ -24,21 +24,45 @@ const publicAsset = (path: string) =>
 
 const leadershipTeam = [
   {
-    name: "Name to be added",
-    role: "Executive Director",
+    name: "John Baguma",
+    role: "Founder & CEO",
     image: publicAsset("Images/founder.jpg"),
     description: "Leadership profile to be added.",
   },
   {
-    name: "Name to be added",
+    name: "Asaba Brenda",
     role: "Chairperson",
     image: publicAsset("Images/member1.jpg"),
     description: "Leadership profile to be added.",
   },
   {
-    name: "Name to be added",
+    name: "Disckson Ainembabazi",
     role: "Treasurer",
     image: publicAsset("Images/member2.jpg"),
+    description: "Leadership profile to be added.",
+  },
+  {
+    name: "Saison Byaruhanga",
+    role: "Treasurer",
+    image: publicAsset("Images/Saison.jpg"),
+    description: "Leadership profile to be added.",
+  },
+  {
+    name: "Jovia Kobusinge",
+    role: "Treasurer",
+    image: publicAsset("Images/jovia.jpg"),
+    description: "Leadership profile to be added.",
+  },
+  {
+    name: "Asaba Enock",
+    role: "Treasurer",
+    image: publicAsset("Images/Asaba.jpg"),
+    description: "Leadership profile to be added.",
+  },
+  {
+    name: "Moses Aheebwa",
+    role: "Treasurer",
+    image: publicAsset("Images/mosess.jpg"),
     description: "Leadership profile to be added.",
   },
 ];
@@ -200,7 +224,7 @@ export default function OurTeam() {
           backgroundImage: `url("${publicAsset("Images/comunity.jpg")}")`,
         }}
       >
-        <div className="absolute inset-0 bg-gradient-to-r from-[#062d18]/30 via-[#073b20]/70 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#062d18]/30 via-[#073b20]/20 to-transparent" />
 
         <div className="relative mx-auto w-full max-w-7xl px-6 py-16 md:px-10">
           <div className="max-w-2xl text-white">
