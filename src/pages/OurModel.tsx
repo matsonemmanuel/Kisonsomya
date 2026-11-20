@@ -19,6 +19,9 @@ import {
   CheckCircle2,
 } from "lucide-react";
 
+const publicAsset = (path: string) =>
+  `${import.meta.env.BASE_URL}${path.replace(/^\/+/, "")}`;
+
 const developmentPillars = [
   {
     number: "01",
@@ -117,7 +120,7 @@ export default function OurModel() {
       {/* HERO SECTION */}
       <section className="relative flex min-h-[520px] items-center overflow-hidden md:min-h-[590px]">
         <img
-          src="/images/kcida-model-hero.jpg"
+          src={publicAsset("Images/gal.png")}
           alt="Community members participating in development activities"
           className="absolute inset-0 h-full w-full object-cover"
         />
@@ -169,7 +172,7 @@ export default function OurModel() {
         <div className="mx-auto grid max-w-7xl items-center gap-14 lg:grid-cols-2">
           <div className="relative">
             <img
-              src="/images/kcida-model-community.jpg"
+              src={publicAsset("Images/building.png")}
               alt="Community members working together"
               className="h-[380px] w-full rounded-[28px] object-cover shadow-xl md:h-[470px]"
             />
@@ -298,7 +301,7 @@ export default function OurModel() {
 
               <div className="mt-8 overflow-hidden rounded-3xl">
                 <img
-                  src="/images/kcida-model-approach.jpg"
+                  src={publicAsset("Images/ladies.png")}
                   alt="Community development and collaboration"
                   className="h-[270px] w-full object-cover"
                 />
@@ -380,13 +383,13 @@ export default function OurModel() {
 
           <div className="grid grid-cols-2 gap-4">
             <img
-              src="/images/kcida-model-participation.jpg"
+              src={publicAsset("Images/work.png")}
               alt="Community participation"
               className="h-64 w-full rounded-3xl object-cover"
             />
 
             <img
-              src="/images/kcida-model-learning.jpg"
+              src={publicAsset("Images/gal.png")}
               alt="Community learning activity"
               className="mt-10 h-64 w-full rounded-3xl object-cover"
             />
@@ -462,7 +465,7 @@ export default function OurModel() {
         <div className="mx-auto grid max-w-7xl items-center gap-12 lg:grid-cols-2">
           <div className="order-2 overflow-hidden rounded-[30px] lg:order-1">
             <img
-              src="/images/kcida-model-accountability.jpg"
+              src={publicAsset("Images/gal.png")}
               alt="Community members meeting and discussing development"
               className="h-[380px] w-full object-cover md:h-[460px]"
             />

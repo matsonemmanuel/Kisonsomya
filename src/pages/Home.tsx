@@ -24,7 +24,7 @@ const publicAsset = (path: string) =>
   `${import.meta.env.BASE_URL}${path.replace(/^\/+/, "")}`;
 const slides = [
   {
-    image: publicAsset("Images/slider1.jpg"),
+    image: publicAsset("Images/gal.png"),
     tag: "Education • Agriculture • Community Development",
     title: "Working Together for a",
     highlight: "Sustained Community",
@@ -32,7 +32,7 @@ const slides = [
       "KCIDA works towards a well-sustained community through education, modified agriculture and production in Kisonsomya, Kabwoya Sub-county and Kikuube District.",
   },
   {
-    image: publicAsset("Images/slider2.jpg"),
+    image: publicAsset("Images/building.png"),
     tag: "Agriculture • Production • Economic Transformation",
     title: "Promoting Education and",
     highlight: "Sustainable Development",
@@ -40,7 +40,7 @@ const slides = [
       "The association seeks to create opportunities through education centres, economic transformation and sustainable agricultural production.",
   },
   {
-    image: publicAsset("Images/slider4.jpg"),
+    image: publicAsset("Images/tailors.png"),
     tag: "Health • Environment • Community Wellbeing",
     title: "Building a Healthier and",
     highlight: "Sustainable Community",

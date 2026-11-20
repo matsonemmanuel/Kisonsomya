@@ -18,7 +18,7 @@ import {
 
 
 const images = {
-  hero: `${import.meta.env.BASE_URL}Images/liveli.jpg`,
+  hero: `${import.meta.env.BASE_URL}Images/prac.png`,
   community: `${import.meta.env.BASE_URL}Images/members.jpg`,
   team: `${import.meta.env.BASE_URL}Images/comunity.jpg`,
   gathering: `${import.meta.env.BASE_URL}Images/slider1.jpg`,
