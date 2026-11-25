@@ -16,6 +16,9 @@ import {
 } from "lucide-react";
 import type { FormEvent } from "react";
 
+const publicAsset = (path: string) =>
+  `${import.meta.env.BASE_URL}${path.replace(/^\/+/, "")}`;
+
 const contactDetails = [
   {
     icon: Phone,
@@ -95,11 +98,11 @@ Sent through the KCIDA website contact form.`
           className="absolute inset-0 bg-cover bg-center"
           style={{
             backgroundImage:
-              "url('/images/kcida-contact-hero.jpg')",
+              `url('${publicAsset("Images/group.jpg")}')`,
           }}
         />
 
-        <div className="absolute inset-0 bg-gradient-to-r from-[#052e22]/95 via-[#075438]/85 to-[#073d2c]/50" />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#052e22]/90 via-[#075438]/65 to-[#073d2c]/20" />
 
         <div className="relative z-10 mx-auto w-full max-w-7xl px-6 py-24 lg:px-10">
           <div className="max-w-3xl">
@@ -342,7 +345,7 @@ Sent through the KCIDA website contact form.`
                   rows={6}
                   required
                   placeholder="Tell us more about your enquiry..."
-                  className="w-full resize-y rounded-xl border border-slate-200 bg-[#fafcf9] px-4 py-4 text-sm outline-none transition placeholder:text-slate-400 focus:border-[#65aa34] focus:ring-4 focus:ring-green-100"
+                  className="w-full resize-none rounded-xl border border-slate-200 bg-[#fafcf9] px-4 py-4 text-sm outline-none transition placeholder:text-slate-400 focus:border-[#65aa34] focus:ring-4 focus:ring-green-100"
                 />
               </div>
 

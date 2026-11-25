@@ -1,6 +1,6 @@
 
 import { useState } from "react";
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useLocation } from "react-router-dom";
 import {
   Menu,
   X,
@@ -16,7 +16,6 @@ import logo from "../../assets/logos/log.png";
 const navigation = [
   {
     name: "About Us",
-    path: "/about",
     dropdown: [
       { name: "Our Story", path: "/our-story" },
       { name: "Our Team", path: "/our-team" },
@@ -29,7 +28,6 @@ const navigation = [
   },
   {
     name: "What We Do",
-    path: "/what-we-do",
     dropdown: [
       { name: "Education & Learning", path: "/education-learning" },
       { name: "Sustainable Livelihoods", path: "/sustainable-livelihoods" },
@@ -44,20 +42,10 @@ const navigation = [
   },
   {
     name: "Get Involved",
-    path: "/get-involved",
     dropdown: [
-      {
-        name: "Volunteer With Us",
-        path: "/volunteer-with-us",
-      },
-      {
-        name: "Partner With Us",
-        path: "/partner-with-us",
-      },
-      {
-        name: "Support Our Work",
-        path: "/support-our-work",
-      },
+      { name: "Volunteer With Us", path: "/volunteer-with-us" },
+      { name: "Partner With Us", path: "/partner-with-us" },
+      { name: "Support Our Work", path: "/support-our-work" },
     ],
   },
   {
@@ -70,9 +58,23 @@ function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [expandedMenu, setExpandedMenu] = useState<string | null>(null);
 
+  const location = useLocation();
+
   const closeMobileMenu = () => {
     setMobileMenuOpen(false);
     setExpandedMenu(null);
+  };
+
+  const toggleMenu = (name: string) => {
+    setExpandedMenu((current) => (current === name ? null : name));
+  };
+
+  const isDropdownActive = (item: {
+    dropdown?: { path: string }[];
+  }) => {
+    return item.dropdown?.some(
+      (subItem) => location.pathname === subItem.path
+    );
   };
 
   const navLinkClass = ({ isActive }: { isActive: boolean }) =>
@@ -152,38 +154,62 @@ function Navbar() {
           {/* DESKTOP NAVIGATION */}
           <nav className="flex w-full items-center justify-end gap-4 2xl:gap-5">
 
+            {/* HOME */}
             <NavLink to="/" end className={navLinkClass}>
               Home
             </NavLink>
 
+            {/* NAVIGATION ITEMS */}
             {navigation.map((item) => (
               <div key={item.name} className="group relative">
 
-                <NavLink to={item.path} className={navLinkClass}>
-                  <span className="flex items-center gap-1">
+                {/* DROPDOWN PARENT */}
+                {item.dropdown ? (
+                  <button
+                    type="button"
+                    aria-haspopup="true"
+                    className={`relative flex cursor-pointer items-center gap-1 whitespace-nowrap py-3 text-sm font-semibold transition-colors ${
+                      isDropdownActive(item)
+                        ? "text-[#12652D]"
+                        : "text-[#102744] hover:text-[#12652D]"
+                    }`}
+                  >
                     {item.name}
 
-                    {item.dropdown && (
-                      <ChevronDown
-                        size={14}
-                        className="transition-transform duration-200 group-hover:rotate-180"
-                      />
+                    <ChevronDown
+                      size={14}
+                      className="transition-transform duration-200 group-hover:rotate-180 group-focus-within:rotate-180"
+                    />
+
+                    {isDropdownActive(item) && (
+                      <span className="absolute bottom-0 left-0 h-[2px] w-full bg-[#12652D]" />
                     )}
-                  </span>
-                </NavLink>
+                  </button>
+                ) : (
+                  /* NORMAL NAVIGATION LINK */
+                  <NavLink to={item.path!} className={navLinkClass}>
+                    {item.name}
+                  </NavLink>
+                )}
 
                 {/* DESKTOP DROPDOWN */}
                 {item.dropdown && (
                   <div className="invisible absolute left-0 top-full z-50 mt-1 w-64 translate-y-2 rounded-lg border border-gray-100 bg-white py-2 opacity-0 shadow-xl transition-all duration-200 group-hover:visible group-hover:translate-y-0 group-hover:opacity-100 group-focus-within:visible group-focus-within:translate-y-0 group-focus-within:opacity-100">
 
                     {item.dropdown.map((subItem) => (
-                      <Link
+                      <NavLink
                         key={subItem.name}
                         to={subItem.path}
-                        className="block cursor-pointer px-5 py-3 text-sm text-[#102744] transition hover:bg-green-50 hover:text-[#12652D]"
+                        className={({ isActive }) =>
+                          `block cursor-pointer px-5 py-3 text-sm transition ${
+                            isActive
+                              ? "bg-green-50 font-semibold text-[#12652D]"
+                              : "text-[#102744] hover:bg-green-50 hover:text-[#12652D]"
+                          }`
+                        }
                       >
                         {subItem.name}
-                      </Link>
+                      </NavLink>
                     ))}
 
                   </div>
@@ -243,13 +269,33 @@ function Navbar() {
             {navigation.map((item) => (
               <div key={item.name}>
 
-                <div className="flex items-center justify-between">
+                {/* DROPDOWN PARENT OR NORMAL LINK */}
+                {item.dropdown ? (
+                  <button
+                    type="button"
+                    aria-expanded={expandedMenu === item.name}
+                    onClick={() => toggleMenu(item.name)}
+                    className={`flex w-full cursor-pointer items-center justify-between rounded-lg px-4 py-3 text-left text-sm font-semibold transition ${
+                      expandedMenu === item.name || isDropdownActive(item)
+                        ? "bg-green-50 text-[#12652D]"
+                        : "text-[#102744] hover:bg-gray-50"
+                    }`}
+                  >
+                    <span>{item.name}</span>
 
+                    <ChevronDown
+                      size={18}
+                      className={`transition-transform duration-200 ${
+                        expandedMenu === item.name ? "rotate-180" : ""
+                      }`}
+                    />
+                  </button>
+                ) : (
                   <NavLink
-                    to={item.path}
+                    to={item.path!}
                     onClick={closeMobileMenu}
                     className={({ isActive }) =>
-                      `flex-1 cursor-pointer rounded-lg px-4 py-3 text-sm font-semibold ${
+                      `block cursor-pointer rounded-lg px-4 py-3 text-sm font-semibold ${
                         isActive
                           ? "bg-green-50 text-[#12652D]"
                           : "text-[#102744] hover:bg-gray-50"
@@ -258,44 +304,27 @@ function Navbar() {
                   >
                     {item.name}
                   </NavLink>
-
-                  {/* MOBILE DROPDOWN TOGGLE */}
-                  {item.dropdown && (
-                    <button
-                      type="button"
-                      aria-label={`Expand ${item.name}`}
-                      aria-expanded={expandedMenu === item.name}
-                      onClick={() =>
-                        setExpandedMenu(
-                          expandedMenu === item.name ? null : item.name
-                        )
-                      }
-                      className="cursor-pointer rounded-lg p-3 text-[#102744] transition hover:bg-green-50"
-                    >
-                      <ChevronDown
-                        size={18}
-                        className={`transition-transform ${
-                          expandedMenu === item.name ? "rotate-180" : ""
-                        }`}
-                      />
-                    </button>
-                  )}
-
-                </div>
+                )}
 
                 {/* MOBILE DROPDOWN SUBMENU */}
                 {item.dropdown && expandedMenu === item.name && (
-                  <div className="ml-5 border-l-2 border-green-100 pl-3">
+                  <div className="ml-5 mt-1 border-l-2 border-green-100 pl-3">
 
                     {item.dropdown.map((subItem) => (
-                      <Link
+                      <NavLink
                         key={subItem.name}
                         to={subItem.path}
                         onClick={closeMobileMenu}
-                        className="block cursor-pointer rounded-lg px-4 py-2.5 text-sm text-gray-600 transition hover:bg-green-50 hover:text-[#12652D]"
+                        className={({ isActive }) =>
+                          `block cursor-pointer rounded-lg px-4 py-2.5 text-sm transition ${
+                            isActive
+                              ? "bg-green-50 font-semibold text-[#12652D]"
+                              : "text-gray-600 hover:bg-green-50 hover:text-[#12652D]"
+                          }`
+                        }
                       >
                         {subItem.name}
-                      </Link>
+                      </NavLink>
                     ))}
 
                   </div>

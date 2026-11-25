@@ -23,6 +23,9 @@ import {
   BarChart3,
 } from "lucide-react";
 
+const publicAsset = (path: string) =>
+  `${import.meta.env.BASE_URL}${path.replace(/^\/+/, "")}`;
+
 const impactAreas = [
   {
     number: "01",
@@ -127,7 +130,7 @@ export default function OurImpact() {
       {/* HERO SECTION */}
       <section className="relative flex min-h-[520px] items-center overflow-hidden md:min-h-[590px]">
         <img
-          src="/images/kcida-impact-hero.jpg"
+          src={publicAsset("Images/guide.jpg")}
           alt="KCIDA community members participating in development activities"
           className="absolute inset-0 h-full w-full object-cover"
         />
@@ -181,7 +184,7 @@ export default function OurImpact() {
 
           <div className="relative">
             <img
-              src="/images/kcida-impact-community.jpg"
+              src={publicAsset("Images/building.png")}
               alt="Community members coming together for development"
               className="h-[380px] w-full rounded-[28px] object-cover shadow-xl md:h-[470px]"
             />
@@ -452,7 +455,7 @@ export default function OurImpact() {
 
           <div className="relative">
             <img
-              src="/images/kcida-impact-milestones.jpg"
+              src={publicAsset("Images/guide.jpg")}
               alt="KCIDA community development journey"
               className="h-[400px] w-full rounded-[30px] object-cover shadow-xl md:h-[500px]"
             />

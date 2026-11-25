@@ -26,12 +26,12 @@ const leadershipTeam = [
   {
     name: "John Baguma",
     role: "Founder & CEO",
-    image: publicAsset("Images/founder.jpg"),
+    image: publicAsset("Images/ceo1.jpg"),
     description: "Leadership profile to be added.",
   },
   {
     name: "Asaba Brenda",
-    role: "Chairperson",
+    role: "Secreatry",
     image: publicAsset("Images/member1.jpg"),
     description: "Leadership profile to be added.",
   },
@@ -43,25 +43,25 @@ const leadershipTeam = [
   },
   {
     name: "Saison Byaruhanga",
-    role: "Treasurer",
+    role: "Member",
     image: publicAsset("Images/Saison.jpg"),
     description: "Leadership profile to be added.",
   },
   {
     name: "Jovia Kobusinge",
-    role: "Treasurer",
-    image: publicAsset("Images/jovia.jpg"),
+    role: "Member",
+    image: publicAsset("Images/member.jpg"),
     description: "Leadership profile to be added.",
   },
   {
     name: "Asaba Enock",
-    role: "Treasurer",
+    role: "Member",
     image: publicAsset("Images/Asaba.jpg"),
     description: "Leadership profile to be added.",
   },
   {
     name: "Moses Aheebwa",
-    role: "Treasurer",
+    role: "Member",
     image: publicAsset("Images/mosess.jpg"),
     description: "Leadership profile to be added.",
   },
@@ -76,21 +76,16 @@ const trainers = [
   {
     name: "Trainer profile to be added",
     role: "Trainer / Facilitator",
-    expertise: "Training area to be confirmed",
-    image: publicAsset("Images/trainer-placeholder.jpg"),
+    expertise: "Tailoring trainer.",
+    image: publicAsset("Images/trainer1.jpg"),
   },
   {
     name: "Trainer profile to be added",
     role: "Trainer / Facilitator",
-    expertise: "Training area to be confirmed",
-    image: publicAsset("Images/trainer-placeholder.jpg"),
+    expertise: "Building trainer.",
+    image: publicAsset("Images/trainer2.jpg"),
   },
-  {
-    name: "Trainer profile to be added",
-    role: "Trainer / Facilitator",
-    expertise: "Training area to be confirmed",
-    image: publicAsset("Images/trainer-placeholder.jpg"),
-  },
+ 
 ];
 
 const contributions = [

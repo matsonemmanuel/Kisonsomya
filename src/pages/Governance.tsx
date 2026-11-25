@@ -21,6 +21,9 @@ import {
   Gavel,
 } from "lucide-react";
 
+const publicAsset = (path: string) =>
+  `${import.meta.env.BASE_URL}${path.replace(/^\/+/, "")}`;
+
 const governanceBodies = [
   {
     number: "01",
@@ -137,7 +140,7 @@ export default function Governance() {
       <section
         className="relative flex min-h-[340px] items-center bg-cover bg-center md:min-h-[410px]"
         style={{
-          backgroundImage: "url('/images/kcida-governance-hero.jpg')",
+          backgroundImage: `url('${publicAsset("Images/guide.jpg")}')`,
         }}
       >
         <div className="absolute inset-0 bg-gradient-to-r from-[#062d18]/90 via-[#073b20]/70 to-transparent" />
@@ -250,7 +253,7 @@ export default function Governance() {
             <div className="absolute -bottom-3 -left-3 h-32 w-32 rounded-3xl bg-[#16813a]" />
 
             <img
-              src="/images/kcida-governance.jpg"
+              src={publicAsset("Images/group.jpg")}
               alt="Community members participating in organisational discussions"
               className="relative h-[320px] w-full rounded-3xl object-cover md:h-[390px]"
             />
@@ -475,7 +478,7 @@ export default function Governance() {
             <div className="absolute -bottom-3 -right-3 h-32 w-32 rounded-3xl bg-[#16813a]" />
 
             <img
-              src="/images/kcida-membership.jpg"
+              src={publicAsset("Images/guide.jpg")}
               alt="Community members taking part in a meeting"
               className="relative h-[320px] w-full rounded-3xl object-cover md:h-[390px]"
             />

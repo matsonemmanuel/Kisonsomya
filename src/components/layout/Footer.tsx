@@ -14,6 +14,12 @@ import {
 import logo from "../../assets/logos/logoso.png";
 
 function Footer() {
+  const linkClass =
+    "flex items-center gap-2 text-sm text-gray-300 transition hover:translate-x-1 hover:text-[#A8E68A]";
+
+  const subLinkClass =
+    "block text-sm text-gray-300 transition hover:translate-x-1 hover:text-[#A8E68A]";
+
   return (
     <footer className="bg-[#102744] text-white">
 
@@ -25,7 +31,7 @@ function Footer() {
           {/* ORGANIZATION INFORMATION */}
           <div>
 
-            {/* CLICKABLE LOGO AND ORGANIZATION IDENTITY */}
+            {/* CLICKABLE LOGO */}
             <Link
               to="/"
               className="group inline-flex items-center gap-3"
@@ -48,7 +54,7 @@ function Footer() {
               </div>
             </Link>
 
-            {/* ORGANIZATION DESCRIPTION */}
+            {/* DESCRIPTION */}
             <p className="mt-6 text-sm leading-7 text-gray-300">
               Kisonsomya Community Initiative for Development Association
               (KCIDA) is committed to promoting community development through
@@ -94,121 +100,217 @@ function Footer() {
               Quick Links
             </h3>
 
-            <div className="space-y-4 text-sm text-gray-300">
+            <div className="space-y-4">
 
-              {[
-                ["Home", "/"],
-                ["About Us", "/about"],
-                ["Our Model", "/our-model"],
-                ["What We Do", "/what-we-do"],
-                ["Our Impact", "/our-impact"],
-                ["Get Involved", "/get-involved"],
-                ["News & Stories", "/news"],
-                ["Contact Us", "/contact"],
-              ].map(([name, path]) => (
-                <Link
-                  key={name}
-                  to={path}
-                  className="flex items-center gap-2 transition hover:translate-x-1 hover:text-[#A8E68A]"
-                >
-                  <ArrowRight size={14} />
-                  {name}
-                </Link>
-              ))}
+              {/* HOME */}
+              <Link to="/" className={linkClass}>
+                <ArrowRight size={14} />
+                Home
+              </Link>
 
-            </div>
-          </div>
+              {/* ABOUT US */}
+              <div>
 
-          {/* OUR FOCUS AREAS */}
-          <div>
+                <p className="mb-3 font-semibold text-[#A8E68A]">
+                  About Us
+                </p>
 
-            <h3 className="mb-6 text-lg font-bold">
-              Our Focus Areas
-            </h3>
+                <div className="ml-3 space-y-3 border-l border-white/15 pl-4">
 
-            <div className="space-y-4 text-sm text-gray-300">
+                  <Link
+                    to="/our-story"
+                    className={subLinkClass}
+                  >
+                    Our Story
+                  </Link>
 
-              {[
-                "Education & Learning",
-                "Sustainable Livelihoods",
-                "Youth Empowerment",
-                "Community Wellbeing",
-                "Environment & Resilience",
-              ].map((program) => (
-                <Link
-                  key={program}
-                  to="/what-we-do"
-                  className="flex items-center gap-2 transition hover:translate-x-1 hover:text-[#A8E68A]"
-                >
-                  <ArrowRight size={14} />
-                  {program}
-                </Link>
-              ))}
+                  <Link
+                    to="/our-team"
+                    className={subLinkClass}
+                  >
+                    Our Team
+                  </Link>
 
-              <Link
-                to="/donate"
-                className="inline-flex items-center gap-2 pt-3 font-bold text-[#A8E68A] hover:text-white"
-              >
-                <Heart size={16} />
-                Support Our Work
+                  <Link
+                    to="/governance"
+                    className={subLinkClass}
+                  >
+                    Governance
+                  </Link>
+
+                </div>
+              </div>
+
+              {/* OUR MODEL */}
+              <Link to="/our-model" className={linkClass}>
+                <ArrowRight size={14} />
+                Our Model
+              </Link>
+
+              {/* OUR IMPACT */}
+              <Link to="/our-impact" className={linkClass}>
+                <ArrowRight size={14} />
+                Our Impact
+              </Link>
+
+              {/* CONTACT */}
+              <Link to="/contact" className={linkClass}>
+                <ArrowRight size={14} />
+                Contact
               </Link>
 
             </div>
           </div>
 
-          {/* CONTACT INFORMATION */}
+          {/* WHAT WE DO */}
           <div>
 
             <h3 className="mb-6 text-lg font-bold">
-              Contact Us
+              What We Do
             </h3>
 
-            <p className="mb-5 text-sm leading-7 text-gray-300">
-              We welcome partnerships, collaborations and conversations
-              about community development.
-            </p>
+            <div className="space-y-4">
 
-            <div className="space-y-5 text-sm text-gray-300">
-
-              <a
-                href="tel:+256784871700"
-                className="flex items-start gap-3 transition hover:text-[#A8E68A]"
+              <Link
+                to="/education-learning"
+                className={linkClass}
               >
-                <Phone
-                  size={19}
-                  className="mt-1 shrink-0 text-[#A8E68A]"
-                />
-                <span>+256 784 871 700</span>
-              </a>
+                <ArrowRight size={14} className="shrink-0" />
+                Education & Learning
+              </Link>
 
-              <a
-                href="mailto:info@kisonsomya.org"
-                className="flex items-start gap-3 transition hover:text-[#A8E68A]"
+              <Link
+                to="/sustainable-livelihoods"
+                className={linkClass}
               >
-                <Mail
-                  size={19}
-                  className="mt-1 shrink-0 text-[#A8E68A]"
-                />
-                <span>info@kisonsomya.org</span>
-              </a>
+                <ArrowRight size={14} className="shrink-0" />
+                Sustainable Livelihoods
+              </Link>
 
-              <div className="flex items-start gap-3">
-                <MapPin
-                  size={19}
-                  className="mt-1 shrink-0 text-[#A8E68A]"
-                />
-                <span>Kisonsomya, Kabwoya, Kikuube District, Uganda</span>
-              </div>
+              <Link
+                to="/youth-empowerment"
+                className={linkClass}
+              >
+                <ArrowRight size={14} className="shrink-0" />
+                Youth Empowerment
+              </Link>
+
+              <Link
+                to="/community-wellbeing"
+                className={linkClass}
+              >
+                <ArrowRight size={14} className="shrink-0" />
+                Community Wellbeing
+              </Link>
+
+              <Link
+                to="/environment-resilience"
+                className={linkClass}
+              >
+                <ArrowRight size={14} className="shrink-0" />
+                Environment & Resilience
+              </Link>
 
             </div>
 
+          </div>
+
+          {/* GET INVOLVED & CONTACT */}
+          <div>
+
+            <h3 className="mb-6 text-lg font-bold">
+              Get Involved
+            </h3>
+
+            <div className="space-y-4">
+
+              <Link
+                to="/volunteer-with-us"
+                className={linkClass}
+              >
+                <ArrowRight size={14} />
+                Volunteer With Us
+              </Link>
+
+              <Link
+                to="/partner-with-us"
+                className={linkClass}
+              >
+                <ArrowRight size={14} />
+                Partner With Us
+              </Link>
+
+            </div>
+
+            {/* DONATE */}
             <Link
-              to="/contact"
-              className="mt-7 inline-flex items-center gap-2 rounded-lg bg-[#086329] px-5 py-3 text-sm font-bold text-white transition hover:bg-[#0B8038]"
+              to="/donate"
+              className="mt-6 inline-flex items-center gap-2 font-bold text-[#A8E68A] transition hover:text-white"
             >
-              Get in Touch
-              <ArrowRight size={17} />
+              <Heart size={16} />
+              Donate
             </Link>
+
+            {/* CONTACT INFORMATION */}
+            <div className="mt-9">
+
+              <h3 className="mb-5 text-lg font-bold">
+                Contact Us
+              </h3>
+
+              <p className="mb-5 text-sm leading-7 text-gray-300">
+                We welcome partnerships, collaborations and conversations
+                about community development.
+              </p>
+
+              <div className="space-y-5 text-sm text-gray-300">
+
+                <a
+                  href="tel:+256784871700"
+                  className="flex items-start gap-3 transition hover:text-[#A8E68A]"
+                >
+                  <Phone
+                    size={19}
+                    className="mt-1 shrink-0 text-[#A8E68A]"
+                  />
+
+                  <span>+256 784 871 700</span>
+                </a>
+
+                <a
+                  href="mailto:info@kisonsomya.org"
+                  className="flex items-start gap-3 transition hover:text-[#A8E68A]"
+                >
+                  <Mail
+                    size={19}
+                    className="mt-1 shrink-0 text-[#A8E68A]"
+                  />
+
+                  <span>info@kisonsomya.org</span>
+                </a>
+
+                <div className="flex items-start gap-3">
+                  <MapPin
+                    size={19}
+                    className="mt-1 shrink-0 text-[#A8E68A]"
+                  />
+
+                  <span>
+                    Kisonsomya, Kabwoya, Kikuube District, Uganda
+                  </span>
+                </div>
+
+              </div>
+
+              <Link
+                to="/contact"
+                className="mt-7 inline-flex items-center gap-2 rounded-lg bg-[#086329] px-5 py-3 text-sm font-bold text-white transition hover:bg-[#0B8038]"
+              >
+                Get in Touch
+                <ArrowRight size={17} />
+              </Link>
+
+            </div>
 
           </div>
 
@@ -224,24 +326,6 @@ function Footer() {
             © {new Date().getFullYear()} Kisonsomya Community Initiative
             for Development Association (KCIDA). All rights reserved.
           </p>
-
-          <div className="flex flex-wrap justify-center gap-5">
-
-            <Link
-              to="/"
-              className="transition hover:text-[#A8E68A]"
-            >
-              Privacy Policy
-            </Link>
-
-            <Link
-              to="/"
-              className="transition hover:text-[#A8E68A]"
-            >
-              Terms & Conditions
-            </Link>
-
-          </div>
 
           <p className="whitespace-nowrap">
             Designed with{" "}
