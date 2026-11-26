@@ -112,7 +112,7 @@ export default function PartnerWithUs() {
         <div
           className="absolute inset-0 bg-cover bg-center"
           style={{
-            backgroundImage: `url(${publicAsset("Images/comunity1.jpg")})`,
+            backgroundImage: `url(${publicAsset("Images/group.jpg")})`,
           }}
         />
 
