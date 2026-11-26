@@ -16,6 +16,9 @@ import {
   Globe2,
 } from "lucide-react";
 
+const publicAsset = (path: string) =>
+  `${import.meta.env.BASE_URL}${path.replace(/^\/+/, "")}`;
+
 const partnershipAreas = [
   {
     icon: GraduationCap,
@@ -109,8 +112,7 @@ export default function PartnerWithUs() {
         <div
           className="absolute inset-0 bg-cover bg-center"
           style={{
-            backgroundImage:
-              "url('/images/kcida-partnership-hero.jpg')",
+            backgroundImage: `url(${publicAsset("Images/comunity1.jpg")})`,
           }}
         />
 
@@ -162,7 +164,7 @@ export default function PartnerWithUs() {
         <div className="mx-auto grid max-w-7xl items-center gap-14 lg:grid-cols-2">
           <div className="relative">
             <img
-              src="/images/kcida-partnership-community.jpg"
+              src={publicAsset("Images/the.png")}
               alt="Community members collaborating on development activities"
               className="h-[360px] w-full rounded-3xl object-cover shadow-xl md:h-[470px]"
             />
