@@ -17,6 +17,9 @@ import {
   Building2,
 } from "lucide-react";
 
+const publicAsset = (path: string) =>
+  `${import.meta.env.BASE_URL}${path.replace(/^\/+/, "")}`;
+
 const supportAreas = [
   {
     icon: GraduationCap,
@@ -99,8 +102,7 @@ export default function SupportOurWork() {
         <div
           className="absolute inset-0 bg-cover bg-center"
           style={{
-            backgroundImage:
-              "url('/images/kcida-support-hero.jpg')",
+            backgroundImage: `url(${publicAsset("Images/comunity1.jpg")})`,
           }}
         />
 
@@ -155,7 +157,7 @@ export default function SupportOurWork() {
 
           <div className="relative">
             <img
-              src="/images/kcida-support-community.jpg"
+              src={publicAsset("Images/building.png")}
               alt="Community members participating in development activities"
               className="h-[360px] w-full rounded-3xl object-cover shadow-xl md:h-[470px]"
             />
