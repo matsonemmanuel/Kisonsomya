@@ -21,6 +21,9 @@ import {
   
 } from "lucide-react";
 
+const publicAsset = (path: string) =>
+  `${import.meta.env.BASE_URL}${path.replace(/^\/+/, "")}`;
+
 const environmentAreas = [
   {
     number: "01",
@@ -120,7 +123,7 @@ export default function EnvironmentResilience() {
       {/* HERO SECTION */}
       <section className="relative flex min-h-[520px] items-center overflow-hidden md:min-h-[590px]">
         <img
-          src="/images/kcida-environment-hero.jpg"
+          src={publicAsset("Images/youth.png")}
           alt="Natural environment and community conservation"
           className="absolute inset-0 h-full w-full object-cover"
         />
@@ -175,7 +178,7 @@ export default function EnvironmentResilience() {
 
           <div className="relative">
             <img
-              src="/images/kcida-environment-community.jpg"
+              src={publicAsset("Images/the.png")}
               alt="Community members engaging in environmental activities"
               className="h-[380px] w-full rounded-[28px] object-cover shadow-xl md:h-[470px]"
             />
@@ -340,7 +343,7 @@ export default function EnvironmentResilience() {
 
           <div className="relative">
             <img
-              src="/images/kcida-environment-agriculture.jpg"
+              src={publicAsset("Images/agric.jpg")}
               alt="Sustainable agriculture and land management"
               className="h-[380px] w-full rounded-[30px] object-cover shadow-xl md:h-[480px]"
             />
@@ -406,13 +409,13 @@ export default function EnvironmentResilience() {
 
           <div className="grid grid-cols-2 gap-4">
             <img
-              src="/images/kcida-environment-water.jpg"
+              src={publicAsset("Images/gal.png")}
               alt="Water resources and environmental conservation"
               className="h-64 w-full rounded-3xl object-cover"
             />
 
             <img
-              src="/images/kcida-environment-trees.jpg"
+              src={publicAsset("Images/founder1.jpg")}
               alt="Trees and natural vegetation"
               className="mt-10 h-64 w-full rounded-3xl object-cover"
             />
@@ -426,7 +429,7 @@ export default function EnvironmentResilience() {
 
           <div className="relative">
             <img
-              src="/images/kcida-environment-resilience.jpg"
+              src={publicAsset("Images/agric.jpg")}
               alt="Community members participating in environmental activities"
               className="h-[380px] w-full rounded-[30px] object-cover shadow-xl md:h-[450px]"
             />
@@ -582,7 +585,7 @@ export default function EnvironmentResilience() {
 
           <div className="overflow-hidden rounded-[30px]">
             <img
-              src="/images/kcida-environment-conservation.jpg"
+              src={publicAsset("Images/slider4.jpg")}
               alt="Nature conservation and environmental protection"
               className="h-[360px] w-full object-cover md:h-[440px]"
             />

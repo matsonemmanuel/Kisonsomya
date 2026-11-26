@@ -19,6 +19,9 @@ import {
   
 } from "lucide-react";
 
+const publicAsset = (path: string) =>
+  `${import.meta.env.BASE_URL}${path.replace(/^\/+/, "")}`;
+
 const wellbeingAreas = [
   {
     number: "01",
@@ -111,7 +114,7 @@ export default function CommunityWellbeing() {
       {/* HERO SECTION */}
       <section className="relative flex min-h-[520px] items-center overflow-hidden md:min-h-[590px]">
         <img
-          src="/images/kcida-wellbeing-hero.jpg"
+          src={publicAsset("Images/the.png")}
           alt="Community members coming together for community wellbeing"
           className="absolute inset-0 h-full w-full object-cover"
         />
@@ -166,7 +169,7 @@ export default function CommunityWellbeing() {
 
           <div className="relative">
             <img
-              src="/images/kcida-wellbeing-community.jpg"
+              src={publicAsset("Images/learners.png")}
               alt="Community members participating in a community activity"
               className="h-[380px] w-full rounded-[28px] object-cover shadow-xl md:h-[470px]"
             />
@@ -325,7 +328,7 @@ export default function CommunityWellbeing() {
 
           <div className="relative">
             <img
-              src="/images/kcida-wellbeing-health.jpg"
+              src={publicAsset("Images/group.jpg")}
               alt="Community health awareness and wellbeing"
               className="h-[380px] w-full rounded-[30px] object-cover shadow-xl md:h-[480px]"
             />
@@ -392,13 +395,13 @@ export default function CommunityWellbeing() {
 
           <div className="grid grid-cols-2 gap-4">
             <img
-              src="/images/kcida-wellbeing-peace.jpg"
+              src={publicAsset("Images/to.png")}
               alt="Community members meeting and engaging together"
               className="h-64 w-full rounded-3xl object-cover"
             />
 
             <img
-              src="/images/kcida-wellbeing-togetherness.jpg"
+              src={publicAsset("Images/wk.png")}
               alt="Community members sharing a community experience"
               className="mt-10 h-64 w-full rounded-3xl object-cover"
             />
@@ -412,7 +415,7 @@ export default function CommunityWellbeing() {
 
           <div className="relative">
             <img
-              src="/images/kcida-wellbeing-inclusion.jpg"
+              src={publicAsset("Images/gal.png")}
               alt="Community members participating in a group activity"
               className="h-[380px] w-full rounded-[30px] object-cover shadow-xl md:h-[450px]"
             />
@@ -562,7 +565,7 @@ export default function CommunityWellbeing() {
 
           <div className="overflow-hidden rounded-[30px]">
             <img
-              src="/images/kcida-wellbeing-principles.jpg"
+              src={publicAsset("Images/tailors.png")}
               alt="Community members working together"
               className="h-[360px] w-full object-cover md:h-[440px]"
             />
