@@ -12,6 +12,9 @@ import {
   
 } from "lucide-react";
 
+const publicAsset = (path: string) =>
+  `${import.meta.env.BASE_URL}${path.replace(/^\/+/, "")}`;
+
 const WHATSAPP_NUMBER = "256784871700";
 
 const donationMessage =
@@ -58,8 +61,7 @@ export default function Donate() {
         <div
           className="absolute inset-0 bg-cover bg-center"
           style={{
-            backgroundImage:
-              "url('/images/kcida-donate-hero.jpg')",
+            backgroundImage: `url(${publicAsset("Images/group.jpg")})`,
           }}
         />
 
@@ -150,7 +152,7 @@ export default function Donate() {
 
           <div className="relative">
             <img
-              src="/images/kcida-donate-community.jpg"
+              src={publicAsset("Images/the.png")}
               alt="Community members working together"
               className="h-[350px] w-full rounded-3xl object-cover shadow-xl md:h-[460px]"
             />
