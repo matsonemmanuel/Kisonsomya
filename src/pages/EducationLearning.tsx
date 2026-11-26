@@ -15,6 +15,9 @@ import {
   Sprout,
 } from "lucide-react";
 
+const publicAsset = (path: string) =>
+  `${import.meta.env.BASE_URL}${path.replace(/^\/+/, "")}`;
+
 const learningAreas = [
   {
     icon: BookOpen,
@@ -69,7 +72,7 @@ export default function EducationLearning() {
       {/* HERO */}
       <section className="relative flex min-h-[520px] items-center overflow-hidden md:min-h-[590px]">
         <img
-          src="/images/kcida-education-hero.jpg"
+          src={publicAsset("Images/prac.png")}
           alt="Education and community learning"
           className="absolute inset-0 h-full w-full object-cover"
         />
@@ -124,7 +127,7 @@ export default function EducationLearning() {
 
           <div className="relative">
             <img
-              src="/images/kcida-education-community.jpg"
+              src={publicAsset("Images/comunity.jpg")}
               alt="Community education and learning"
               className="h-[380px] w-full rounded-[28px] object-cover shadow-xl md:h-[470px]"
             />
@@ -278,7 +281,7 @@ export default function EducationLearning() {
 
           <div className="relative">
             <img
-              src="/images/kcida-education-learning.jpg"
+              src={publicAsset("Images/about.jpg")}
               alt="People participating in a learning activity"
               className="h-[380px] w-full rounded-[30px] object-cover shadow-xl md:h-[480px]"
             />
@@ -342,13 +345,13 @@ export default function EducationLearning() {
 
           <div className="grid grid-cols-2 gap-4">
             <img
-              src="/images/kcida-education-community-learning.jpg"
+              src={publicAsset("Images/agric.jpg")}
               alt="Community learning"
               className="h-64 w-full rounded-3xl object-cover"
             />
 
             <img
-              src="/images/kcida-education-skills.jpg"
+              src={publicAsset("Images/gal.png")}
               alt="Practical learning and skills development"
               className="mt-10 h-64 w-full rounded-3xl object-cover"
             />
@@ -362,7 +365,7 @@ export default function EducationLearning() {
 
           <div className="overflow-hidden rounded-[30px]">
             <img
-              src="/images/kcida-education-principles.jpg"
+              src={publicAsset("Images/founder1.jpg")}
               alt="Education and community development"
               className="h-[360px] w-full object-cover md:h-[440px]"
             />

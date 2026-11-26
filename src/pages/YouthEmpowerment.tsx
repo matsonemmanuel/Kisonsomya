@@ -18,6 +18,9 @@ import {
   Star,
 } from "lucide-react";
 
+const publicAsset = (path: string) =>
+  `${import.meta.env.BASE_URL}${path.replace(/^\/+/, "")}`;
+
 const empowermentAreas = [
   {
     number: "01",
@@ -117,7 +120,7 @@ export default function YouthEmpowerment() {
       {/* HERO SECTION */}
       <section className="relative flex min-h-[520px] items-center overflow-hidden md:min-h-[590px]">
         <img
-          src="/images/kcida-youth-hero.jpg"
+          src={publicAsset("Images/wk.png")}
           alt="Young people participating in community development"
           className="absolute inset-0 h-full w-full object-cover"
         />
@@ -173,7 +176,7 @@ export default function YouthEmpowerment() {
 
           <div className="relative">
             <img
-              src="/images/kcida-youth-community.jpg"
+              src={publicAsset("Images/move.png")}
               alt="Young people working together"
               className="h-[380px] w-full rounded-[28px] object-cover shadow-xl md:h-[470px]"
             />
@@ -340,7 +343,7 @@ export default function YouthEmpowerment() {
 
           <div className="relative">
             <img
-              src="/images/kcida-youth-leadership.jpg"
+              src={publicAsset("Images/mode.png")}
               alt="Youth leadership and community participation"
               className="h-[380px] w-full rounded-[30px] object-cover shadow-xl md:h-[480px]"
             />
@@ -406,13 +409,13 @@ export default function YouthEmpowerment() {
 
           <div className="grid grid-cols-2 gap-4">
             <img
-              src="/images/kcida-youth-skills.jpg"
+              src={publicAsset("Images/wk.png")}
               alt="Young people learning practical skills"
               className="h-64 w-full rounded-3xl object-cover"
             />
 
             <img
-              src="/images/kcida-youth-innovation.jpg"
+              src={publicAsset("Images/youth.png")}
               alt="Young people collaborating and sharing ideas"
               className="mt-10 h-64 w-full rounded-3xl object-cover"
             />
@@ -477,7 +480,7 @@ export default function YouthEmpowerment() {
 
           <div className="overflow-hidden rounded-[30px]">
             <img
-              src="/images/kcida-youth-community-development.jpg"
+              src={publicAsset("Images/to.png")}
               alt="Young people contributing to community development"
               className="h-[360px] w-full object-cover md:h-[440px]"
             />
@@ -562,7 +565,7 @@ export default function YouthEmpowerment() {
 
           <div className="overflow-hidden rounded-[30px]">
             <img
-              src="/images/kcida-youth-principles.jpg"
+              src={publicAsset("Images/tailors.png")}
               alt="Youth participation and collaboration"
               className="h-[360px] w-full object-cover md:h-[440px]"
             />

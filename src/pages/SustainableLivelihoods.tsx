@@ -17,6 +17,9 @@ import {
 
 } from "lucide-react";
 
+const publicAsset = (path: string) =>
+  `${import.meta.env.BASE_URL}${path.replace(/^\/+/, "")}`;
+
 const livelihoodAreas = [
   {
     number: "01",
@@ -116,7 +119,7 @@ export default function SustainableLivelihoods() {
       {/* HERO SECTION */}
       <section className="relative flex min-h-[520px] items-center overflow-hidden md:min-h-[590px]">
         <img
-          src="/images/kcida-livelihoods-hero.jpg"
+          src={publicAsset("Images/guide.jpg")}
           alt="Sustainable agriculture and community livelihoods"
           className="absolute inset-0 h-full w-full object-cover"
         />
@@ -171,7 +174,7 @@ export default function SustainableLivelihoods() {
 
           <div className="relative">
             <img
-              src="/images/kcida-livelihoods-community.jpg"
+              src={publicAsset("Images/work.png")}
               alt="Community members engaged in livelihood activities"
               className="h-[380px] w-full rounded-[28px] object-cover shadow-xl md:h-[470px]"
             />
@@ -336,7 +339,7 @@ export default function SustainableLivelihoods() {
 
           <div className="relative">
             <img
-              src="/images/kcida-livelihoods-agriculture.jpg"
+              src={publicAsset("Images/agric.jpg")}
               alt="Agriculture and sustainable production"
               className="h-[380px] w-full rounded-[30px] object-cover shadow-xl md:h-[480px]"
             />
@@ -401,13 +404,13 @@ export default function SustainableLivelihoods() {
 
           <div className="grid grid-cols-2 gap-4">
             <img
-              src="/images/kcida-livelihoods-enterprise.jpg"
+              src={publicAsset("Images/prac.png")}
               alt="Community economic activity"
               className="h-64 w-full rounded-3xl object-cover"
             />
 
             <img
-              src="/images/kcida-livelihoods-production.jpg"
+              src={publicAsset("Images/tailors.png")}
               alt="Local production activity"
               className="mt-10 h-64 w-full rounded-3xl object-cover"
             />
@@ -472,7 +475,7 @@ export default function SustainableLivelihoods() {
 
           <div className="overflow-hidden rounded-[30px]">
             <img
-              src="/images/kcida-livelihoods-sustainability.jpg"
+              src={publicAsset("Images/prac.png")}
               alt="Environmental sustainability and responsible resource use"
               className="h-[360px] w-full object-cover md:h-[440px]"
             />
