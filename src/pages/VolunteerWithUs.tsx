@@ -15,6 +15,9 @@ import {
   MapPin,
 } from "lucide-react";
 
+const publicAsset = (path: string) =>
+  `${import.meta.env.BASE_URL}${path.replace(/^\/+/, "")}`;
+
 const volunteerAreas = [
   {
     icon: GraduationCap,
@@ -69,7 +72,7 @@ export default function VolunteerWithUs() {
         <div
           className="absolute inset-0 bg-cover bg-center"
           style={{
-            backgroundImage: "url('/images/kcida-volunteer-hero.jpg')",
+            backgroundImage: `url(${publicAsset("Images/gal.png")})`,
           }}
         />
 
@@ -121,7 +124,7 @@ export default function VolunteerWithUs() {
         <div className="mx-auto grid max-w-7xl items-center gap-14 lg:grid-cols-2">
           <div className="relative">
             <img
-              src="/images/kcida-volunteer-community.jpg"
+              src={publicAsset("Images/the.png")}
               alt="Community members participating in community development"
               className="h-[360px] w-full rounded-3xl object-cover shadow-xl md:h-[470px]"
             />
